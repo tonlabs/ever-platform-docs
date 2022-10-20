@@ -2,7 +2,7 @@
 description: Evercloud API Service Level Agreement
 ---
 
-# API SLA
+# SLA
 
 ## Uptime (availability)
 
@@ -20,7 +20,7 @@ Now when the API works on shared infrastructure. and some projects load it, othe
 
 We are constantly working on API quality and with time, will eliminate this issue.&#x20;
 
-If you want to have low response time you can purchase [Dedicated Cloud](../../use-cases/dedicated-cloud-deployment/).
+If you want to have low response time you can purchase [Dedicated Cloud](../../use-cases/infrastructure-provider/).
 
 ## Limits
 

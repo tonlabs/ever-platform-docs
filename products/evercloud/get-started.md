@@ -6,7 +6,7 @@ description: Create Evercloud project and send requests to the Everscale network
 
 ## SLA
 
-[First, read what service level agreement we provide.](api-sla.md)
+[First, read what service level agreement we provide.](sla.md)
 
 ## Registration
 

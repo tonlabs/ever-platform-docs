@@ -4,7 +4,7 @@ description: Connect to Mainnet public shared endpoints
 
 # Networks Endpoints
 
-[**Read about Public API SLA.**](api-sla.md)****
+[**Read about Public API SLA.**](sla.md)****
 
 | Network | Playgrounds                                     | Endpoints                                       |
 | ------- | ----------------------------------------------- | ----------------------------------------------- |
