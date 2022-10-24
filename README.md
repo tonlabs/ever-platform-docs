@@ -1,10 +1,10 @@
 ---
-description: What is Evernode Platform?
+description: What is Ever Platform?
 ---
 
-# About Evernode Platform
+# About Ever Platform
 
-Evernode Platform provides developers with products, APIs and tools, that help  build, test and run applications on Everscale network.
+Ever Platform provides developers with products, APIs and tools, that help  build, test and run applications on Everscale and other TVM-compatible networks.
 
 ### Evernode Platform products:
 

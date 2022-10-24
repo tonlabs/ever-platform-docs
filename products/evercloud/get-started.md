@@ -1,12 +1,8 @@
 ---
-description: Create Evercloud project and send requests to the Everscale network
+description: Create Evercloud project and start your communication with blockchain
 ---
 
 # Get Started
-
-## SLA
-
-[First, read what service level agreement we provide.](sla.md)
 
 ## Registration
 

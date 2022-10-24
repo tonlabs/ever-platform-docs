@@ -13,4 +13,4 @@ description: Connect to Mainnet public shared endpoints
 
 ## Full API documentation
 
-[API Documentation](../../reference/graphql-api-docs.md)
+[API Documentation](../../reference/graphql-api.md)

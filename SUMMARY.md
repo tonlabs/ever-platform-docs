@@ -1,6 +1,6 @@
 # Table of contents
 
-* [About Evernode Platform](README.md)
+* [About Ever Platform](README.md)
 
 ## Use cases
 
@@ -19,11 +19,11 @@
 
 * [Evercloud](products/evercloud/README.md)
   * [Get Started](products/evercloud/get-started.md)
-  * [SLA](products/evercloud/sla.md)
   * [Networks Endpoints](products/evercloud/networks-endpoints.md)
   * [GraphQL API documentation](products/evercloud/graphql-api-documentation.md)
   * [Devnet Faucet](products/evercloud/devnet-faucet.md)
   * [About data proofs in Cloud](products/evercloud/about-data-proofs-in-cloud.md)
+  * [SLA](products/evercloud/sla.md)
   * [HTTP notifications](products/evercloud/http-notifications.md)
 * [Dedicated Cloud/Node](products/dedicated-cloud-node.md)
 * [Dapp Server (DS)](products/dapp-server-ds.md)
@@ -34,7 +34,7 @@
 
 ## Reference
 
-* [GraphQL API docs](reference/graphql-api-docs.md)
+* [GraphQL API](reference/graphql-api.md)
 * [Release notes](reference/release-notes/README.md)
   * [Public API](reference/release-notes/public-api.md)
   * [Simple Emulator (SE)](reference/release-notes/simple-emulator-se.md)
@@ -46,7 +46,7 @@
 
 ## SDK and tools
 
-* [EverDev](sdk-and-tools/everdev.md)
+* [everdev](sdk-and-tools/everdev.md)
 * [Client Libraries](sdk-and-tools/client-libraries.md)
 
 ## Samples
