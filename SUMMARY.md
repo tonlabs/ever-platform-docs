@@ -55,7 +55,7 @@
 
 ## Guides
 
-* [How to connect your application](guides/how-to-connect-your-application.md)
+* [How to connect to GraphQL API](guides/how-to-connect-to-graphql-api.md)
 
 ## 😊 Social
 
