@@ -17,7 +17,7 @@ Ever Platform provides developers with products, APIs and tools, that help  buil
 
 ### API
 
-Robust [GraphQL API](https://docs.everos.dev/ever-sdk/reference/ever-os-api) that is shared by all the products provides smooth development flow from local testing to staging and production.&#x20;
+Robust [GraphQL API](reference/graphql-api/README.md) that is shared by all the products provides smooth development flow from local testing to staging and production.&#x20;
 
 ### Connect with us
 

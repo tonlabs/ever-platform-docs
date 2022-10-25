@@ -1,10 +1,12 @@
+---
+description: About GraphQL API
+---
+
 # GraphQL API
 
-{% embed url="https://docs.everos.dev/ever-sdk/reference/ever-os-api" %}
+GraphQL API is shared by all [Evernode Platform](../../README.md) products.
 
-GraphQL API is shared by all [Evernode Platform](https://docs.everos.dev/evernode-platform) products.
-
-Due to the GraphQL ability to stitch its schemas, GraphQL API is in fact a set of "stitched" APIs behind it. Meanwhile all Evernode Platform products share the same core API that allows to communicate with Everscale network, [each product has its own subset](https://docs.everos.dev/evernode-platform/products/functionality-comparison) of APIs corresponding to the Product use-cases.
+Due to the GraphQL ability to stitch its schemas, GraphQL API is in fact a set of "stitched" APIs behind it. Meanwhile all Evernode Platform products share the same core API that allows to communicate with Everscale network, [each product has its own subset](../../products/functionality-comparison.md) of APIs corresponding to the Product use-cases.
 
 ## Use-cases
 
@@ -28,7 +30,7 @@ Due to the GraphQL ability to stitch its schemas, GraphQL API is in fact a set o
 
 Read more in the next sections.
 
-[Quick Start](broken-reference)
+[Quick Start](samples.md#quick-start)
 
 ## SDK
 
