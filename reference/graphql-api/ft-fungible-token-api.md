@@ -4,7 +4,7 @@ description: Get TIP3 tokens info, balances, transfers
 
 # FT (Fungible Token) API
 
-``![](<../../.gitbook/assets/image (10).png>)``
+![](<../../.gitbook/assets/image (33).png>)
 
 `ft` root type is API that provides data about fungible tokens, transfers, holders.
 
