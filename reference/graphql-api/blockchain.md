@@ -4,7 +4,7 @@ description: Learn about basic blockchain API
 
 # Blockchain API
 
-``<img src="../../.gitbook/assets/image (8).png" alt="" data-size="original">``
+![](<../../.gitbook/assets/image (34).png>)
 
 `blockchain` root type is API that includes such basic real-time data as:
 
