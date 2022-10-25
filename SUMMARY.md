@@ -34,7 +34,17 @@
 
 ## Reference
 
-* [GraphQL API](reference/graphql-api.md)
+* [GraphQL API](reference/graphql-api/README.md)
+  * [Networks](reference/graphql-api/networks.md)
+  * [Explore Playground](reference/graphql-api/web\_playground.md)
+  * [Connect to GraphQL API](reference/graphql-api/connect-to-graphql-api.md)
+  * [Schema](reference/graphql-api/schema.md)
+  * [Blockchain API](reference/graphql-api/blockchain.md)
+  * [Info API](reference/graphql-api/info.md)
+  * [FT (Fungible Token) API](reference/graphql-api/ft-fungible-token-api.md)
+  * [Collections: Query Language](reference/graphql-api/query\_language.md)
+  * [Field Descriptions](reference/graphql-api/field\_descriptions.md)
+  * [Samples](reference/graphql-api/samples.md)
 * [Release notes](reference/release-notes/README.md)
   * [Public API](reference/release-notes/public-api.md)
   * [Simple Emulator (SE)](reference/release-notes/simple-emulator-se.md)
@@ -51,8 +61,17 @@
 
 ## Samples
 
-* [GraphQL Samples](samples/graphql-samples.md)
-
+* [GraphQL Samples](samples/graphql-samples/README.md)
+  * [Quick Start](samples/graphql-samples/quick-start.md)
+  * [Network Config](samples/graphql-samples/network-config.md)
+  * [Blocks](samples/graphql-samples/blocks.md)
+  * [Accounts](samples/graphql-samples/accounts.md)
+  * [Transactions](samples/graphql-samples/transactions.md)
+  * [Messages](samples/graphql-samples/messages.md)
+  * [Blockchain Statistics](samples/graphql-samples/statistics.md)
+  * [Counterparties](samples/graphql-samples/counterparties.md)
+  * [FT (Fungible Token) API](samples/graphql-samples/ft-fungible-token-api.md)
+  
 ## Guides
 
 * [How to connect to GraphQL API](guides/how-to-connect-to-graphql-api.md)

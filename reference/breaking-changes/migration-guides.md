@@ -12,7 +12,7 @@ If you work directly with GraphQL API, by default, now, it returns the old box v
 
 ![](<../../.gitbook/assets/image (15).png>)
 
-<mark style="color:orange;">**Support of 2 boc versions is temporary. You need to migrate your applications on DevNet to the new SDK 1.31 version asap or start using special http header if you work with API directly. When the sunset period is over, API will start returning the new boc version by default for all clients. The sunset period is not defined yet, we will keep you informed. Watch for deprecation scedule https://tonlabs.gitbook.io/evernode-platform/reference/breaking-changes/deprecation-schedule**</mark> &#x20;
+<mark style="color:orange;">**Support of 2 boc versions is temporary. You need to migrate your applications on DevNet to the new SDK 1.31 version asap or start using special http header if you work with API directly. When the sunset period is over, API will start returning the new boc version by default for all clients. The sunset period is not defined yet, we will keep you informed. Watch for [deprecation scedule](deprecation-schedule.md)**</mark> &#x20;
 
 ### `getAccountsCount, getTransactionsCount, getAccountsTotalBalance` <a href="#migrate_stats" id="migrate_stats"></a>
 
