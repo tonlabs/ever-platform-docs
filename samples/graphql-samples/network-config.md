@@ -2,8 +2,6 @@
 
 ## Get blockchain config
 
-<mark style="color:orange;">**Attention! This query is available only in Public API now, but soon will be supported in Evernode-DS. Use**</mark> [**this temporary solution** ](network-config.md#old-get-blockchain-config-via-blocks-collection)<mark style="color:orange;">**to get network config in Evernode-DS.**</mark>
-
 ```graphql
 query {
   blockchain{
@@ -24,7 +22,6 @@ query {
    }
   }
 }
-
 ```
 
 Result:
@@ -53,131 +50,10 @@ Result:
 }
 ```
 
-Implement Pagination  the same way as described above:)
-
-
-
-## (Old) Get blockchain config via blocks collection
-
-<mark style="color:orange;">**Will be deprecated soon**</mark>
+## All config data
 
 ```graphql
-query{
-  blocks(filter:{
-    workchain_id:{
-      eq:-1
-    }
-    key_block:{
-      eq:true
-    }
-
-  }
-    orderBy:{
-      path:"seq_no"
-      direction:DESC
-    }
-    limit: 1
-  )
-  {
-    id
-       master { 
-          config {
-            p15 {
-              validators_elected_for
-              elections_start_before
-              elections_end_before
-              stake_held_for
-            }
-             p16 {
-              max_validators
-              max_main_validators
-              min_validators
-            }
-            p17 {
-              min_stake
-              max_stake
-              min_total_stake
-              max_stake_factor          
-            }
-            p34 {
-              utime_since
-              utime_until
-              total
-              total_weight
-              list {
-                public_key
-                adnl_addr
-                weight
-              }
-            }
-
-          }
-      }
-  }
-}
-```
-
-You will get the result:
-
-```graphql
-"data": {
-    "blocks": [
-      {
-        "id": "bcddfbde6a6aaf5aec485b10a31d95d0854bae2a8c42d4e1d4aefc5abcc1038b",
-        "master": {
-          "config": {
-            "p15": {
-              "validators_elected_for": 65536,
-              "elections_start_before": 32768,
-              "elections_end_before": 8192,
-              "stake_held_for": 32768
-            },
-            "p16": {
-              "max_validators": 1000,
-              "max_main_validators": 100,
-              "min_validators": 13
-            },
-            "p17": {
-              "min_stake": "0x9184e72a000",
-              "max_stake": "0x2386f26fc10000",
-              "min_total_stake": "0x5af3107a4000",
-              "max_stake_factor": 196608
-            },
-            "p34": {
-              "utime_since": 1602143452,
-              "utime_until": 1602208988,
-              "total": 50,
-              "total_weight": "0xfffffffffffffe9",
-              "list": [
-                {
-                  "public_key": "90ea4fe8575d130bc103b7fbb9f8435f9a3b283e0188078066f96269a63f9841",
-                  "adnl_addr": "59a66ce3f95bfcb5337482fff1ca22489ec4a340af9efab9ab713b6e9f5b311d",
-                  "weight": "0x81c19e63fe5f51"
-                },
-                {
-                  "public_key": "85eb9c8b781014df3554994c7c04f76850b2a61a05a841ad2087b9357c2e2b71",
-                  "adnl_addr": "e0ee212d1d3fa671237ec14c5f428fe3024bf49cc38b29aa2562b8a73c106967",
-                  "weight": "0x7df693d5a2fa8c"
-                },
-                {
-                  "public_key": "348d2f4af518e0c027158b381c0f854ea8046c72bbea320df35565d7d636ba6b",
-                  "adnl_addr": "4edfacd00dc54a0ca53ddf4040c7488d4eed8fe9abd4859b26e2d07f36e02f1a",
-                  "weight": "0x7df693d5a2fa8c"
-                },
-              ...
-```
-
-You can also query other config data:
-
-```graphql
-query { 
-  blocks(filter: { 
-    seq_no: { eq: 3127942 }
-    workchain_id: { eq: -1}  
-  }) {
-    master {
-      config_addr
-      config {
+     ... config {
 #Address of config contract in mc
         p0
 #Address of elector contract in mc

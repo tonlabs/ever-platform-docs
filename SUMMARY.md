@@ -63,6 +63,7 @@
 
 * [GraphQL Samples](samples/graphql-samples/README.md)
   * [Quick Start](samples/graphql-samples/quick-start.md)
+  * [Send message](samples/graphql-samples/send-message.md)
   * [Network Config](samples/graphql-samples/network-config.md)
   * [Blocks](samples/graphql-samples/blocks.md)
   * [Accounts](samples/graphql-samples/accounts.md)
@@ -71,7 +72,7 @@
   * [Blockchain Statistics](samples/graphql-samples/statistics.md)
   * [Counterparties](samples/graphql-samples/counterparties.md)
   * [FT (Fungible Token) API](samples/graphql-samples/ft-fungible-token-api.md)
-  
+
 ## Guides
 
 * [How to connect to GraphQL API](guides/how-to-connect-to-graphql-api.md)

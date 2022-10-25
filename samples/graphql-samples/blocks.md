@@ -74,7 +74,7 @@ Result:
 
 ### About cursor
 
-We formed this cursor based on the fact that all workchain blocks are commited into masterchain blocks in some specific order. And masterchain is ordered by seq\_no and has 1 thread. In simple words, this cursor splits all blockchain blocks into ranges between masterchain blocks and sort them inside that range in an ambiguous order. And, by the way, we derived the cursor for  blockchain transactions - from cursor for blocks - so that it is possible to paginate them too (check transactions pagination section).&#x20;
+We formed this cursor based on the fact that all workchain blocks are commited into masterchain blocks in some specific order. And masterchain is ordered by seq\_no and has 1 thread. In simple words, this cursor splits all blockchain blocks into ranges between masterchain blocks and sort them inside that range in an ambiguous order. And, by the way, we derived the cursor for blockchain transactions - from cursor for blocks - so that it is possible to paginate them too (check transactions pagination section).
 
 ### Paginate by masterchain blocks seq\_no range <a href="#paginate_by_seqno" id="paginate_by_seqno"></a>
 
@@ -160,11 +160,11 @@ Let's check other available parameters for pagination.
 
 `before/last`- Show `last` number of items `before` (not including) cursor. Used for backward pagination.
 
-To check if the next page exists - we ask for `pageInfo.hasNextPage` parameter. If no next page exists, we can move `seq_no` range forward.  If you implement backward pagination - use `pageInfo.hasPreviousPage.`
+To check if the next page exists - we ask for `pageInfo.hasNextPage` parameter. If no next page exists, we can move `seq_no` range forward. If you implement backward pagination - use `pageInfo.hasPreviousPage.`
 
-Check other available parameters in GraphQL schema in playground.&#x20;
+Check other available parameters in GraphQL schema in playground.
 
-Here we continue pagination within the same `seq_no` range, and ask for the next 10 blocks after the last cursor in the previous query.  We see that the next page exists so we can continue paginating whithin the same `seq_no` range.
+Here we continue pagination within the same `seq_no` range, and ask for the next 10 blocks after the last cursor in the previous query. We see that the next page exists so we can continue paginating whithin the same `seq_no` range.
 
 ```graphql
 query {
@@ -242,7 +242,7 @@ Result:
 
 ### Paginate by masterchain blocks time range <a href="#paginate_by_timerange" id="paginate_by_timerange"></a>
 
-If you do not know the `seq_no` of masterchain blocks  to create a range you can first obtain it by the time range, and then implement pagination the same way as described above.
+If you do not know the `seq_no` of masterchain blocks to create a range you can first obtain it by the time range, and then implement pagination the same way as described above.
 
 To get the `seq_no` range by time rage do this query:
 
@@ -257,7 +257,7 @@ query{
 }
 ```
 
-&#x20;In the result you will get the required seq\_no range.
+In the result you will get the required seq\_no range.
 
 <mark style="color:orange;">**Attention! Specifying timestamp range does not mean that there will be no blocks outside this range in the result set: this happens because some thread blocks that were generated outside this time range were committed to masterchain block generated within this time range. But anyway, this pagination allows us to get all blocks in a handy manner, these time deltas are very small and not significant and can be ignored.**</mark>
 
@@ -276,7 +276,7 @@ query{
 
 ## Key blocks pagination
 
-Sometimes it may be needed to paginate key blocks - for instance, it is used for proofs calculations.&#x20;
+Sometimes it may be needed to paginate key blocks - for instance, it is used for proofs calculations.
 
 Or you can get blockchain config with this simple query:
 
@@ -307,7 +307,6 @@ query {
    }
   }
 }
-
 ```
 
 Result:
@@ -343,7 +342,7 @@ Result:
 }
 ```
 
-Implement Pagination  the same way as described above:)
+Implement Pagination the same way as described above:)
 
 ## Query the latest masterchain block height
 
@@ -363,7 +362,6 @@ query {
    }
   }
 }
-
 ```
 
 The the latest masterchain block height is `1418096`:
@@ -410,7 +408,6 @@ query {
    }
   }
 }
-
 ```
 
 Result:
@@ -455,7 +452,6 @@ query {
    }
   }
 }
-
 
 ```
 

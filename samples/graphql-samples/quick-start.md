@@ -26,12 +26,12 @@ query{
 
 GraphQL schema is self-documented. You can find all fields descriptions in the playground. Click this button:
 
-![](<../../.gitbook/assets/image (1) (1).png>)
+![](<../../.gitbook/assets/image (1) (1) (1).png>)
 
 ## Access API from Client Libraries
 
-Check out [Client Libraries net module](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_net).
+Check out [Client Libraries net module](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod\_net).
 
-Use [`query_collection`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_net#query_collection) method for `blocks`, `accounts`, `messages`, `transactions` queries.&#x20;
+Use [`query_collection`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod\_net#query\_collection) method for `blocks`, `accounts`, `messages`, `transactions` queries.
 
-Use [`query`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_net#query) method for all other queries.&#x20;
+Use [`query`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod\_net#query) method for all other queries.
