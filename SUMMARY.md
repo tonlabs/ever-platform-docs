@@ -1,6 +1,8 @@
 # Table of contents
 
 * [About Ever Platform](README.md)
+* [Demo endpoint](demo-endpoint.md)
+* [Quick Start](quick-start.md)
 
 ## Use cases
 
@@ -32,6 +34,19 @@
 * [Network Emulator (NE)](products/network-emulator-ne.md)
 * [Functionality comparison](products/functionality-comparison.md)
 
+## Samples
+
+* [GraphQL Samples](samples/graphql-samples/README.md)
+  * [Send message](samples/graphql-samples/send-message.md)
+  * [Network Config](samples/graphql-samples/network-config.md)
+  * [Blocks](samples/graphql-samples/blocks.md)
+  * [Accounts](samples/graphql-samples/accounts.md)
+  * [Transactions](samples/graphql-samples/transactions.md)
+  * [Messages](samples/graphql-samples/messages.md)
+  * [Blockchain Statistics](samples/graphql-samples/statistics.md)
+  * [Counterparties](samples/graphql-samples/counterparties.md)
+  * [FT (Fungible Token) API](samples/graphql-samples/ft-fungible-token-api.md)
+
 ## Reference
 
 * [GraphQL API](reference/graphql-api/README.md)
@@ -58,20 +73,6 @@
 
 * [everdev](sdk-and-tools/everdev.md)
 * [Client Libraries](sdk-and-tools/client-libraries.md)
-
-## Samples
-
-* [GraphQL Samples](samples/graphql-samples/README.md)
-  * [Quick Start](samples/graphql-samples/quick-start.md)
-  * [Send message](samples/graphql-samples/send-message.md)
-  * [Network Config](samples/graphql-samples/network-config.md)
-  * [Blocks](samples/graphql-samples/blocks.md)
-  * [Accounts](samples/graphql-samples/accounts.md)
-  * [Transactions](samples/graphql-samples/transactions.md)
-  * [Messages](samples/graphql-samples/messages.md)
-  * [Blockchain Statistics](samples/graphql-samples/statistics.md)
-  * [Counterparties](samples/graphql-samples/counterparties.md)
-  * [FT (Fungible Token) API](samples/graphql-samples/ft-fungible-token-api.md)
 
 ## Guides
 
