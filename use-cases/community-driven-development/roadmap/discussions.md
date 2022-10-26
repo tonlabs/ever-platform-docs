@@ -9,8 +9,10 @@ description: >-
 Suggest your ideas and vote for other ideas here:
 
 {% embed url="https://evernode.frill.co/b/8my22807/feature-ideas" %}
+Share your ideas with us
+{% endembed %}
 
-You can also participate in the Ever Platform and SDK discussions in our telegram group:
+You can also participate in the Evernode Platform and SDK discussions in our telegram group:
 
 {% embed url="https://t.me/ever_sdk" %}
 

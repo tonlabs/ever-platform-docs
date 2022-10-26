@@ -10,6 +10,6 @@ API functionality covers not only basic blockchain node functionality but also a
 
 Supported networks:
 
-* Everscale [Mainnet](networks-endpoints.md)
-* Everscale [Devnet](devnet-faucet.md)
+* [Mainnet](networks-endpoints.md)
+* [Devnet](devnet-faucet.md)
 * SOON - GOSH network

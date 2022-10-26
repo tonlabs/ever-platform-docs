@@ -4,9 +4,9 @@ description: What infrastructure we provide
 
 # Infrastructure Provider
 
-## Shared infrastructure
+## High availability Everscale APIs&#x20;
 
-[Evercloud](../../products/evercloud/) - highly available scalable API.&#x20;
+[Evercloud](../../products/evercloud/) - ready-to-go scalable APIs for any applications - from small to big.&#x20;
 
 ## Dedicated infrastructure
 
