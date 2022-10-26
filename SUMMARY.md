@@ -10,7 +10,6 @@
   * [Roadmap](use-cases/community-driven-development/roadmap/README.md)
     * [Discussions](use-cases/community-driven-development/roadmap/discussions.md)
   * [Your ideas](use-cases/community-driven-development/your-ideas.md)
-  * [Free API](use-cases/community-driven-development/free-api.md)
   * [DevNet Giver(Faucet)](use-cases/community-driven-development/devnet-giver-faucet.md)
 * [Infrastructure Provider](use-cases/infrastructure-provider/README.md)
   * [Projects](use-cases/infrastructure-provider/projects.md)

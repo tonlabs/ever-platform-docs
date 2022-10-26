@@ -1,8 +1,7 @@
 ---
 description: >-
-  Projects and exchanges that work on Evercloud/Dedicated Cloud. Not all
-  projects are present here. If you want your project to be here please PM
-  https://t.me/EkaterinaPantaz
+  Not all projects are present here. If you want your project to be here please
+  PM https://t.me/EkaterinaPantaz
 ---
 
 # Projects
