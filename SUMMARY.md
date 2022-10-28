@@ -1,7 +1,7 @@
 # Table of contents
 
 * [About Ever Platform](README.md)
-* [Demo endpoint](demo-endpoint.md)
+* [Sandbox endpoint](sandbox-endpoint.md)
 * [Quick Start](quick-start.md)
 
 ## Use cases

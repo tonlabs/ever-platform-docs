@@ -32,7 +32,7 @@ You will see your secret appear in the "Summary" tab
 
 ## Explore Playground
 
-Click on the circle with arrow next to the endpoint to open GraphQL playground.&#x20;
+Click on the circle with arrow next to the endpoint to open GraphQL playground.
 
 In the playground you can make queries and explore Graphql Schema.
 
@@ -44,7 +44,7 @@ First, you need to add your projectID to the url inside the playground to access
 If you enabled "Secret required" option, then you need specify Basic Auth creds in the headers! You will find them on "Security" tab in Evercloud Dashboard.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now lets execute this query to get the hash of the last masterchain block!
 
@@ -432,8 +432,6 @@ message
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ## API Documentation
 

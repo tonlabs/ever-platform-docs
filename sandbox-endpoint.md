@@ -1,16 +1,16 @@
 ---
-description: Take a look at the GraphQL API demo
+description: Take a look at the GraphQL API sandbox
 ---
 
-# Demo endpoint
+# Sandbox endpoint
 
 ## Endpoint
 
-URL: [https://devnet-demo.evercloud.dev/graphql](https://devnet-demo.evercloud.dev/graphql)
+URL: [https://devnet-sandbox.evercloud.dev/graphql](https://devnet-sandbox.evercloud.dev/graphql)
 
-Playground: [https://devnet-demo.evercloud.dev/graphql](https://devnet-demo.evercloud.dev/graphql)
+Playground: [https://devnet-sandbox.evercloud.dev/graphql](https://devnet-sandbox.evercloud.dev/graphql)
 
-<figure><img src=".gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 This endpoint is a free demo version of [Evercloud API](products/evercloud/). It has no authorization and SLA, low connections and request-per-second limits and demonstrates only basic functionality. [Not all Evercloud functionality is present.](products/functionality-comparison.md)&#x20;
