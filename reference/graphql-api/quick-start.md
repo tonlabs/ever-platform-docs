@@ -14,7 +14,7 @@ And integrate it with ever-sdk.&#x20;
 
 ## Playground
 
-Go to [https://devnet-sandbox.evercloud.dev/graphql](https://devnet-sandbox.evercloud.dev/graphql)
+Go to GraphQL playground [https://devnet-sandbox.evercloud.dev/graphql](https://devnet-sandbox.evercloud.dev/graphql)
 
 Insert this query in the left part.&#x20;
 
@@ -33,13 +33,13 @@ blockchain{
 
 Now click play button and you will see the result:
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>В</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>В</p></figcaption></figure>
 
 ## Documentation
 
-Click on the button "schema" on the right. You will see the API documentation with all available fields:
+Click on the button "schema" on the right. You will see the API documentation with all available fields. Try to make your own query now.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Request with curl
 

@@ -22,7 +22,7 @@ URL: [https://devnet-sandbox.evercloud.dev/graphql](https://devnet-sandbox.everc
 
 Playground: [https://devnet-sandbox.evercloud.dev/graphql](https://devnet-sandbox.evercloud.dev/graphql)
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## [Quick Start](quick-start.md)
 

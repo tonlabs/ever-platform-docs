@@ -49,6 +49,8 @@
 ## Reference
 
 * [GraphQL API](reference/graphql-api/README.md)
+  * [Quick Start](reference/graphql-api/quick-start.md)
+  * [Samples](reference/graphql-api/samples.md)
   * [Networks](reference/graphql-api/networks.md)
   * [Explore Playground](reference/graphql-api/web\_playground.md)
   * [Connect to GraphQL API](reference/graphql-api/connect-to-graphql-api.md)
@@ -58,7 +60,6 @@
   * [FT (Fungible Token) API](reference/graphql-api/ft-fungible-token-api.md)
   * [Collections: Query Language](reference/graphql-api/query\_language.md)
   * [Field Descriptions](reference/graphql-api/field\_descriptions.md)
-  * [Samples](reference/graphql-api/samples.md)
 * [Release notes](reference/release-notes/README.md)
   * [Public API](reference/release-notes/public-api.md)
   * [Simple Emulator (SE)](reference/release-notes/simple-emulator-se.md)
