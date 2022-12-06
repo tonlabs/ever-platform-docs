@@ -30,7 +30,7 @@ Due to the GraphQL ability to stitch its schemas, GraphQL API is in fact a set o
 
 Read more in the next sections.
 
-## [Quick Start](samples.md#quick-start)
+## [Quick Start](quick-start.md)
 
 ## Client Libraries
 
