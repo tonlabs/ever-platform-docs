@@ -1,19 +1,21 @@
 # FT (Fungible Token) API
 
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
 ## List of tokens
 
-Shows the list of tokens, sorted by token creation timestamp (DESC) - fresh ones go first.&#x20;
+Shows the list of tokens, sorted by token creation timestamp (DESC) - fresh ones go first.
 
 #### Filter
 
-You can optionally filter by symbol substring.&#x20;
+You can optionally filter by symbol substring.
 
 #### Pagination
 
-Use `cursor`, {`first`, `after`} or  {`last`, `before`} filters for pagination.
+Use `cursor`, {`first`, `after`} or {`last`, `before`} filters for pagination.
 
 {% hint style="success" %}
-We followed GraphQL best practices and implemented Relay Cursor Connections Specification for pagination for all list types. You can read more here [https://relay.dev/graphql/connections.htm](https://relay.dev/graphql/connections.htm)&#x20;
+We followed GraphQL best practices and implemented Relay Cursor Connections Specification for pagination for all list types. You can read more here [https://relay.dev/graphql/connections.htm](https://relay.dev/graphql/connections.htm)
 {% endhint %}
 
 ```graphql
@@ -62,7 +64,7 @@ Returns info about token owner by its address.
 
 #### Pagination
 
-Use `cursor`, {`first`, `after`} or  {`last`, `before`} filters for pagination of list fields.
+Use `cursor`, {`first`, `after`} or {`last`, `before`} filters for pagination of list fields.
 
 ```graphql
 query{
@@ -114,13 +116,13 @@ query{
 
 ## Wallet info
 
-Returns the information related to the tip3 token wallet.&#x20;
+Returns the information related to the tip3 token wallet.
 
 Explore schema for all available fields.
 
 #### Pagination
 
-Use `cursor`, {`first`, `after`} or  {`last`, `before`} filters for pagination of list fields.
+Use `cursor`, {`first`, `after`} or {`last`, `before`} filters for pagination of list fields.
 
 ```graphql
 query{

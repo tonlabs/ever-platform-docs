@@ -17,4 +17,5 @@ description: Comparison of GraphQL functionality across products
 | NFT API                                                  | 1Q 2023   | no  | no  | yes             | no             |
 | statistics                                               | yes       | no  | no  | yes             | no             |
 | counterparties                                           | yes       | no  | no  | yes             | no             |
+| price                                                    | soon      | no  | no  | no              | no             |
 | zerostates                                               | yes       | yes | no  | yes             | yes            |

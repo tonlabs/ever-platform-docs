@@ -25,7 +25,6 @@ query {
   }
   }
 }
-
 ```
 
 Result:
@@ -70,7 +69,7 @@ fields:
 * `data` - bag of cells with the account's data
 * `code` - bag of cells with the account's code
 * `library` - If present, contains library code used in smart-contract.
-* `data_hash` - hash of account data&#x20;
+* `data_hash` - hash of account data
 * `code_hash` - hash of account code
 * `library_hash` - library field hash
 
@@ -105,7 +104,6 @@ query {
   }
   }
 }
-
 ```
 
 Result
@@ -142,9 +140,9 @@ Result
 }
 ```
 
-Use `endCursor` field for further pagination and `hasNextCursor` for identifying if more records exist.&#x20;
+Use `endCursor` field for further pagination and `hasNextCursor` for identifying if more records exist.
 
-If you want to paginate within some time range, you can use masterchain seq\_no or time range filter. You can paginate backwards as well.  Also you can use additional handy pagination parameters such as `after`, `first`, `before`, `last`. Read more about it in [blocks pagination section](blocks.md#about-cursor).&#x20;
+If you want to paginate within some time range, you can use masterchain seq\_no or time range filter. You can paginate backwards as well. Also you can use additional handy pagination parameters such as `after`, `first`, `before`, `last`. Read more about it in [blocks pagination section](blocks.md#about-cursor).
 
 ## Pagination of account's messages
 
@@ -158,9 +156,9 @@ Use-cases:
 
 In all these cases you need to paginate account messages with some filters applied. Lets see how to do it.
 
-### Account transfers&#x20;
+### Account transfers
 
-Lets get first 2  transfers some account received or sent. So we need to get incoming and outcoming internal messages. We separated `internal` message type into 2 types: `IntIn` and `IntOut` for search convenience. This way it is possible also to get only deposits, and only withdrawals.&#x20;
+Lets get first 2 transfers some account received or sent. So we need to get incoming and outcoming internal messages. We separated `internal` message type into 2 types: `IntIn` and `IntOut` for search convenience. This way it is possible also to get only deposits, and only withdrawals.
 
 ```graphql
 query{
@@ -234,7 +232,7 @@ Result. We see that the next page exists, we can continue pagination.
 
 ### Account events
 
-To get account events, we need to get Account's external outbound message. Their type is `ExtOut.` `Body` field contains ABI-encoded information with Event data.  You can parse it with SDK function [`abi.decode_message_body`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_abi#decode_message_body).
+To get account events, we need to get Account's external outbound message. Their type is `ExtOut.` `Body` field contains ABI-encoded information with Event data. You can parse it with SDK function [`abi.decode_message_body`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod\_abi#decode\_message\_body).
 
 ```graphql
 query{
@@ -296,7 +294,7 @@ Result
 
 ### Account external calls
 
-If you want to collect external calls of an account, filter by msg\_type = `ExtIn`. `Body` field contains ABI-encoded information with Event data.  You can parse it with SDK function [`abi.decode_message_body`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_abi#decode_message_body). Lets get the last external call:
+If you want to collect external calls of an account, filter by msg\_type = `ExtIn`. `Body` field contains ABI-encoded information with Event data. You can parse it with SDK function [`abi.decode_message_body`](https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod\_abi#decode\_message\_body). Lets get the last external call:
 
 ```graphql
 query{
@@ -412,13 +410,13 @@ Result:
 }
 ```
 
-We see that previous page exists and can continue pagination.&#x20;
+We see that previous page exists and can continue pagination.
 
 ## Get the list of account's counterparties
 
 Returns the paginable list of accounts the account has ever interacted with, with the last message info attached, sorted by the last message time. Useful for applications that want to show a screen with dialog list sorted by the last interaction time.
 
-<mark style="color:orange;">**Attention! Available only in public API. Not available in Evernode-DS**</mark>**.**[ **See functionality comparison section.** ](../../products/functionality-comparison.md)****
+<mark style="color:orange;">**Attention! Available only in public API. Not available in Evernode-DS**</mark>**.**[ **See functionality comparison section.** ](../../products/functionality-comparison.md)\*\*\*\*
 
 ```graphql
 query{
@@ -432,8 +430,6 @@ query{
   }
 }
 ```
-
-
 
 ## Account transactions count
 

@@ -42,9 +42,6 @@
   * [Accounts](samples/graphql-samples/accounts.md)
   * [Transactions](samples/graphql-samples/transactions.md)
   * [Messages](samples/graphql-samples/messages.md)
-  * [Blockchain Statistics](samples/graphql-samples/statistics.md)
-  * [Counterparties](samples/graphql-samples/counterparties.md)
-  * [FT (Fungible Token) API](samples/graphql-samples/ft-fungible-token-api.md)
 
 ## Reference
 
@@ -57,9 +54,13 @@
   * [Schema](reference/graphql-api/schema.md)
   * [Blockchain API](reference/graphql-api/blockchain.md)
   * [Info API](reference/graphql-api/info.md)
-  * [FT (Fungible Token) API](reference/graphql-api/ft-fungible-token-api.md)
   * [Collections: Query Language](reference/graphql-api/query\_language.md)
   * [Field Descriptions](reference/graphql-api/field\_descriptions.md)
+* [Evercloud API Add-ons](reference/evercloud-api-add-ons/README.md)
+  * [Blockchain Statistics](reference/evercloud-api-add-ons/statistics.md)
+  * [FT (Fungible Token) API](reference/evercloud-api-add-ons/ft-fungible-token-api.md)
+  * [Price](reference/evercloud-api-add-ons/price.md)
+  * [Counterparties](reference/evercloud-api-add-ons/counterparties.md)
 * [Release notes](reference/release-notes/README.md)
   * [Public API](reference/release-notes/public-api.md)
   * [Simple Emulator (SE)](reference/release-notes/simple-emulator-se.md)
