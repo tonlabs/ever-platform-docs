@@ -61,6 +61,7 @@
   * [FT (Fungible Token) API](reference/evercloud-api-add-ons/ft-fungible-token-api.md)
   * [Price](reference/evercloud-api-add-ons/price.md)
   * [Counterparties](reference/evercloud-api-add-ons/counterparties.md)
+  * [Flex API](reference/evercloud-api-add-ons/flex-api.md)
 * [Release notes](reference/release-notes/README.md)
   * [Public API](reference/release-notes/public-api.md)
   * [Simple Emulator (SE)](reference/release-notes/simple-emulator-se.md)
