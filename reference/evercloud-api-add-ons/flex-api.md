@@ -9,3 +9,5 @@
 Get Flex DApp here: [https://flexdex.fi/](https://flexdex.fi/)
 
 Review full Flex API specifications here: [https://docs.flexdex.fi/technical-description/flex-sdk-api](https://docs.flexdex.fi/technical-description/flex-sdk-api)
+
+Learn about integration options here: [https://docs.flexdex.fi/integration/quick-integration-guide](https://docs.flexdex.fi/integration/quick-integration-guide)
