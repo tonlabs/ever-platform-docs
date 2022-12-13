@@ -5,7 +5,7 @@ description: How to connect to GraphQL API endpoint
 # Connect to GraphQL API
 
 {% hint style="warning" %}
-If you received "Unauthorized access" error, please check that you specified the Evercloud access credentials correctly. Follow the [Guide](../../products/evercloud/get-started.md) for more info.&#x20;
+If you received "Unauthorized access" error, please check that you specified the Evercloud access credentials correctly. Follow the [Guide](../../products/evercloud/get-started.md) for more info.
 {% endhint %}
 
 ### HTTPS
@@ -18,6 +18,12 @@ If you received "Unauthorized access" error, please check that you specified the
 curl --location --request POST 'endpoint' \
 --header 'Content-Type: application/json' \
 --data-raw '{"query":"query($address: String!){\n  blockchain{\n    account(address:$address){\n      info{\n        balance(format:DEC)\n      }\n    }\n  }\n}","variables":{"address":"0:e17ac4e77f46626579c7c4fefe35286117384c5ccfc8745c9780cdf056c378bf"}}'
+```
+{% endtab %}
+
+{% tab title="everdev" %}
+```bash
+everdev network credentials main --project "Project Id" --access-key "Project secret"
 ```
 {% endtab %}
 
@@ -63,6 +69,39 @@ const client = new TonClient({
     }
 }
 )()
+```
+{% endtab %}
+
+{% tab title="tonos-cli" %}
+```bash
+tonos-cli config --url "mainnet.evercloud.dev" --project_id "your-project-id"
+Succeeded.
+{
+  "url": "mainnet.evercloud.dev",
+  "wc": 0,
+  "addr": null,
+  "method": null,
+  "parameters": null,
+  "wallet": null,
+  "pubkey": null,
+  "abi_path": null,
+  "keys_path": null,
+  "retries": 5,
+  "timeout": 60000,
+  "message_processing_timeout": 40000,
+  "out_of_sync_threshold": 15,
+  "is_json": false,
+  "depool_fee": 0.5,
+  "lifetime": 60,
+  "no_answer": true,
+  "balance_in_tons": false,
+  "local_run": false,
+  "async_call": false,
+  "debug_fail": "None",
+  "project_id": "your-project-id",
+  "access_key": null,
+  "endpoints": []
+}
 ```
 {% endtab %}
 
