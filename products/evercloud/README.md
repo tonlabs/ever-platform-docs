@@ -1,12 +1,12 @@
 ---
-description: About Evercloud
+description: TVM networks shared endpoints
 ---
 
 # Evercloud
 
-Evercloud provides Everscale developers with APIs on top of  blockchain infrastructure, so that developers can focus on business logic instead of infrastructure maintenance.
+[https://evercloud.dev/](https://dashboard.evercloud.dev/)
 
-API functionality covers not only basic blockchain node functionality but also analytics data including all historic data from the genesis block of Everscale.&#x20;
+Evercloud provides TVM networks developers with scalable [GraphQL API ](../../reference/graphql-api/)endpoints.
 
 Supported networks:
 
