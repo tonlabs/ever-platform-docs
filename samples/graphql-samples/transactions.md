@@ -17,7 +17,7 @@ query{
 }
 ```
 
-Result:&#x20;
+Result:
 
 ```graphql
 {
@@ -81,27 +81,69 @@ You need to sum up these values to get the total fee the account paid for the tr
 
 ## Paginate blockchain transactions
 
-Sometimes it is needed to  paginate all the network transactions. &#x20;
+Paginate workchain transactions within masterchain seqNo range, sorted by blockchain logical time.
 
-Due to the fact that Everscale is a multi-chain multi-threaded blockchain, pagination is not a straightforward operation and requires some special cursor and order of blocks and transactions inside them.
+### Filter parameters
 
-We provide our users with such functionality.  &#x20;
+You can  filter by&#x20;
 
-Read more about the used cursor-based approach in [blocks pagination section.](blocks.md#blocks-pagination)
+* `master_seq_no_range`: BlockchainMasterSeqNoFilter - Everscale is sharded blockchain, you need paginate within masterchain seqNo range, where your workchain blocks were commited.
+* `workchain`: Int - optional, if you want to filter by workchain. If ommited, queries all workchains data.&#x20;
+* `max_balance_delta`: String
+* `min_balance_delta`: String&#x20;
+* `allow_latest_inconsistent_data`: Boolean   - false by default. If you need to have less latency over consistency, you can get the latest data in realtime, but may miss some data. If you need reliable reads, then specify as false.
 
-You can either paginate all workchains' transactions (if you omit `workchain` parameter) or only the specified workchain's transactions.
+### Pagination parameters
 
-If you do not specify time range you will start pagination from the start (`first` parameter) or the end (`last` parameter) of the network.
+Use `cursor`, {`first`, `after`} or {`last`, `before`} filters for pagination.
 
-Here is a simple query how to get last 3 transactions of the network and paginate backwards.
+{% hint style="success" %}
+We followed GraphQL best practices and implemented Relay Cursor Connections Specification for pagination for all list types. You can read more here [https://relay.dev/graphql/connections.htm](https://relay.dev/graphql/connections.htm)
+{% endhint %}
 
-You can paginate from the beginning, specify time period and number of returned items. Check how to implement different pagination use-cases in[ blocks pagination section.](blocks.md#paginate\_by\_seqno)
+### How to paginate by time range
+
+If you do not know the `seq_no` of masterchain blocks to create a range you can first obtain it by the time range, and then implement pagination the same way as described above.
+
+To get the `seq_no` range by time rage do this query:
+
+```graphql
+query{
+  blockchain{
+    master_seq_no_range(time_start: 1647421084 time_end: 1647422084){
+      start
+      end
+    }
+  }
+}
+```
+
+```graphql
+{
+  "data": {
+    "blockchain": {
+      "master_seq_no_range": {
+        "start": 2670769,
+        "end": 2671143
+      }
+    }
+  }
+}
+```
+
+In the result you will get the required seq\_no range.
+
+<mark style="color:orange;">**Attention! Specifying timestamp range does not mean that there will be no blocks outside this range in the result set: this happens because some thread blocks that were generated outside this time range were committed to masterchain block generated within this time range. But anyway, this pagination allows us to get all blocks in a handy manner, these time deltas are very small and not significant and can be ignored.**</mark>
 
 ```graphql
 query{
   blockchain{
       transactions(
-        last:3
+        master_seq_no_range: {
+          start: 2660661
+          end: 2670661
+      }
+          workchain:0
       ){
         edges{
           node{
@@ -112,7 +154,7 @@ query{
         }
         pageInfo{
           startCursor
-          hasPreviousPage
+          haNextPage
         }
       }
   }
@@ -165,7 +207,6 @@ Use `startCursor` and `hasPreviousPage` == true condition to paginate backwards 
 query{
   blockchain{
       transactions(
-        last:3
         before: "528cc96m05"
       ){
         edges{
