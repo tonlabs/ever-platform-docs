@@ -83,6 +83,74 @@ You need to sum up these values to get the total fee the account paid for the tr
 
 Paginate workchain transactions within masterchain seqNo range, sorted by blockchain logical time.
 
+Look at this sample. See the parameters documentation below.
+
+```graphql
+query{
+  blockchain{
+      transactions(
+        master_seq_no_range: {
+          start: 2660661
+          end: 2670661
+      }
+          workchain:0
+      ){
+        edges{
+          node{
+            id
+            now
+          }
+          cursor
+        }
+        pageInfo{
+          startCursor
+          hasNextPage
+        }
+      }
+  }
+}
+```
+
+Result:
+
+```graphql
+{
+  "data": {
+    "blockchain": {
+      "transactions": {
+        "edges": [
+          {
+            "node": {
+              "id": "transaction/d5ec03df890727a90eb80960560664ca49d9842e0a9f6f3c188ad1a49fca7264",
+              "now": 1647429363
+            },
+            "cursor": "528cc96m05"
+          },
+          {
+            "node": {
+              "id": "transaction/39c2c3174aa414003bc55e68b6a08710cbcf6ce1b71dec1a0c8962fdcef5fc76",
+              "now": 1647429363
+            },
+            "cursor": "528cc96m06"
+          },
+          {
+            "node": {
+              "id": "transaction/fa674f4c537aeaac951ebe4fd9eb2a1d094aae26d611f126652bee92827f3ed2",
+              "now": 1647429363
+            },
+            "cursor": "528cc96m07"
+          }
+        ],
+        "pageInfo": {
+          "startCursor": "528cc96m05",
+          "hasNextPage": true
+        }
+      }
+    }
+  }
+}
+```
+
 ### Filter parameters
 
 You can  filter by&#x20;
@@ -134,72 +202,6 @@ query{
 In the result you will get the required seq\_no range.
 
 <mark style="color:orange;">**Attention! Specifying timestamp range does not mean that there will be no blocks outside this range in the result set: this happens because some thread blocks that were generated outside this time range were committed to masterchain block generated within this time range. But anyway, this pagination allows us to get all blocks in a handy manner, these time deltas are very small and not significant and can be ignored.**</mark>
-
-```graphql
-query{
-  blockchain{
-      transactions(
-        master_seq_no_range: {
-          start: 2660661
-          end: 2670661
-      }
-          workchain:0
-      ){
-        edges{
-          node{
-            id
-            now
-          }
-          cursor
-        }
-        pageInfo{
-          startCursor
-          haNextPage
-        }
-      }
-  }
-}
-```
-
-Result:
-
-```graphql
-{
-  "data": {
-    "blockchain": {
-      "transactions": {
-        "edges": [
-          {
-            "node": {
-              "id": "transaction/d5ec03df890727a90eb80960560664ca49d9842e0a9f6f3c188ad1a49fca7264",
-              "now": 1647429363
-            },
-            "cursor": "528cc96m05"
-          },
-          {
-            "node": {
-              "id": "transaction/39c2c3174aa414003bc55e68b6a08710cbcf6ce1b71dec1a0c8962fdcef5fc76",
-              "now": 1647429363
-            },
-            "cursor": "528cc96m06"
-          },
-          {
-            "node": {
-              "id": "transaction/fa674f4c537aeaac951ebe4fd9eb2a1d094aae26d611f126652bee92827f3ed2",
-              "now": 1647429363
-            },
-            "cursor": "528cc96m07"
-          }
-        ],
-        "pageInfo": {
-          "startCursor": "528cc96m05",
-          "hasPreviousPage": true
-        }
-      }
-    }
-  }
-}
-```
 
 Use `startCursor` and `hasPreviousPage` == true condition to paginate backwards like this:
 
