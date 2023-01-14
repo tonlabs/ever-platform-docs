@@ -4,7 +4,7 @@ description: >-
   by EverX
 ---
 
-# Collections: Query Language
+# Query Collections: Query Language
 
 ## What is a collection
 
@@ -48,9 +48,7 @@ subscription{
 
 ## Support in Client Libraries
 
-**``**[**`ever-sdk`**](../types-and-methods/) provides wrappers for convenient work with collections from applications: `net.query_collection`, `net.aggregate_collection`, `net.subscribe_collection.`
-
-
+[**`ever-sdk`**](../types-and-methods/) provides wrappers for convenient work with collections from applications: `net.query_collection`, `net.aggregate_collection`, `net.subscribe_collection.`
 
 ## Content table
 
@@ -242,7 +240,7 @@ Video tutorial - GraphQL: Joined Blocks, OR Operator, Aggregations
 
 ## Subscription
 
-In this example, we start a subscription and get a result whenever a block is inserted or updated in the blockchain.
+In this example, we start a subscription and get a result whenever a new block is generated.
 
 ```graphql
 subscription{
