@@ -22,7 +22,7 @@
   * [Get Started](products/evercloud/get-started.md)
   * [Networks Endpoints](products/evercloud/networks-endpoints.md)
   * [GraphQL API documentation](products/evercloud/graphql-api-documentation.md)
-  * [Devnet Faucet](products/evercloud/devnet-faucet.md)
+  * [Testnet Faucets](products/evercloud/devnet-faucet.md)
   * [About data proofs in Cloud](products/evercloud/about-data-proofs-in-cloud.md)
   * [SLA](products/evercloud/sla.md)
   * [HTTP notifications](products/evercloud/http-notifications.md)

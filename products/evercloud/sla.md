@@ -6,7 +6,7 @@ description: Evercloud API Service Level Agreement
 
 ## Uptime (availability)
 
-Evercloud endpoint availability is 99.99.
+Evercloud endpoint availability is 99.95
 
 We do not include periods of unavailability of endpoints caused by underlying network issues in calculation of availability.&#x20;
 

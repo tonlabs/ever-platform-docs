@@ -4,7 +4,7 @@ description: What is Ever Platform?
 
 # About Ever Platform
 
-Ever Platform provides developers with products, APIs and tools, that help build, test and run applications on Everscale and other TVM-compatible networks.
+Ever Platform provides developers with products, APIs and tools, that help build, test and run applications on  TVM-compatible networks (Everscale, Toicoin, etc).
 
 ### Ever Platform products:
 

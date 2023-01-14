@@ -1,12 +1,14 @@
 ---
-description: About GraphQL API
+description: >-
+  Query data and send messages to the TVM-compatible networks (Everscale,
+  Toncoin)
 ---
 
 # GraphQL API
 
-GraphQL API is shared by all [Ever Platform](../../) products.
+Query data and send messages to the TVM-compatible networks (Everscale, Toncoin and others) via GraphQL API.
 
-Due to the GraphQL ability to stitch its schemas, GraphQL API is in fact a set of "stitched" APIs behind it. Meanwhile all Ever Platform products share the same core API that allows to communicate with Everscale network, [each product has its own subset](../../products/functionality-comparison.md) of APIs corresponding to the Product use-cases.
+GraphQL API is shared by all [Ever Platform](../../) products (Cloud, Community and Emulator solutions) - [each product has its own subset](../../products/functionality-comparison.md) of APIs corresponding to the Product use-cases.
 
 ## Use-cases
 
