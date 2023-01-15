@@ -6,7 +6,7 @@ description: >-
 
 # GraphQL API
 
-Query data and send messages to the TVM-compatible networks (Everscale, Toncoin and others) via GraphQL API.
+Query data and send messages to the TVM-compatible networks (Everscale, The Open Network and others) via GraphQL API.
 
 GraphQL API is shared by all [Ever Platform](../../) products (Cloud, Community and Emulator solutions) - [each product has its own subset](../../products/functionality-comparison.md) of APIs corresponding to the Product use-cases.
 

@@ -12,5 +12,5 @@ Supported networks:
 
 * Everscale [Mainnet](networks-endpoints.md)
 * Everscale [Devnet](devnet-faucet.md)
-* Toncoin [Mainnet](networks-endpoints.md) beta
+* The Open Network (TON) [Mainnet](networks-endpoints.md) beta
 * SOON - GOSH network
