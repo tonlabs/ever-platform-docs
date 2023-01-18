@@ -82,6 +82,46 @@ Use-cases:
 * Query new account transactions to trigger some logic on your side
 * Optionally filter transactions by `Aborted` type or `balance_delta` value
 
+### Pagination range
+
+Use `master_seq_no_range` parameter to specify masterchain block sequence number range inside of which you will paginate transactions.&#x20;
+
+If you need to use time range instead of seq\_no, you can convert time range to seq\_no range like this:
+
+```graphql
+query{
+  blockchain{
+    master_seq_no_range(time_start: 1647421084 time_end: 1647422084){
+      start
+      end
+    }
+  }
+}
+```
+
+### Filter parameters
+
+You can flter account transactions by these parameters:
+
+```graphql
+
+# specify if you are okay with data eventual consistency
+allow_latest_inconsistent_data: Boolean 
+aborted: Boolean
+min_balance_delta: String
+max_balance_delta: String
+```
+
+### Pagination parameters
+
+Use `cursor`, {`first`, `after`} or {`last`, `before`} filters for pagination.
+
+{% hint style="success" %}
+We followed GraphQL best practices and implemented Relay Cursor Connections Specification for pagination for all list types. You can read more here [https://relay.dev/graphql/connections.htm](https://relay.dev/graphql/connections.htm)
+{% endhint %}
+
+
+
 Let's paginate some account transactions from the very first one:
 
 ```graphql
@@ -142,8 +182,6 @@ Result
 
 Use `endCursor` field for further pagination and `hasNextCursor` for identifying if more records exist.
 
-If you want to paginate within some time range, you can use masterchain seq\_no or time range filter. You can paginate backwards as well. Also you can use additional handy pagination parameters such as `after`, `first`, `before`, `last`. Read more about it in [blocks pagination section](blocks.md#about-cursor).
-
 ## Pagination of account's messages
 
 Use-cases:
@@ -155,6 +193,49 @@ Use-cases:
 * optionally filter messages by value amount
 
 In all these cases you need to paginate account messages with some filters applied. Lets see how to do it.
+
+### Pagination range
+
+Use `master_seq_no_range` parameter to specify masterchain block sequence number range inside of which you will paginate transactions.&#x20;
+
+If you need to use time range instead of seq\_no, you can convert time range to seq\_no range like this:
+
+```graphql
+query{
+  blockchain{
+    master_seq_no_range(time_start: 1647421084 time_end: 1647422084){
+      start
+      end
+    }
+  }
+}
+```
+
+### Filter parameters
+
+You can filter messages by these parameters:
+
+```graphql
+allow_latest_inconsistent_data: Boolean
+counterparties: [String!]
+msg_type: [BlockchainMessageTypeFilterEnum!]
+min_value: String
+
+enum BlockchainMessageTypeFilterEnum {
+    ExtIn #    External inbound
+    ExtOut #    External outbound
+    IntIn #    Internal inbound
+    IntOut #    Internal outbound
+}
+```
+
+### Pagination parameters
+
+Use `cursor`, {`first`, `after`} or {`last`, `before`} filters for pagination.
+
+{% hint style="success" %}
+We followed GraphQL best practices and implemented Relay Cursor Connections Specification for pagination for all list types. You can read more here [https://relay.dev/graphql/connections.htm](https://relay.dev/graphql/connections.htm)
+{% endhint %}
 
 ### Account transfers
 
