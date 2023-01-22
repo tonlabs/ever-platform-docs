@@ -12,7 +12,7 @@ Supported networks:
 
 * Everscale [Mainnet](networks-endpoints.md)
 * Everscale [Devnet](devnet-faucet.md) (stable network for development)
-* Everscale [Testnet](networks-endpoints.md) (FLD) (early network feature testing)&#x20;
+* Everscale [Testnet](networks-endpoints.md) (FLD) (early network feature testing, no auth yet)&#x20;
 * The Open Network (TON) [Mainnet](networks-endpoints.md) beta (No Auth yet)
-* E
 * SOON - GOSH network
+* SOON - Venom network
