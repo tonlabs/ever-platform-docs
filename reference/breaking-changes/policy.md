@@ -6,7 +6,7 @@ description: Breaking changes and deprecation policy
 
 GraphQL protocol provides a [smooth mechanism for breaking changes](https://graphql.org/learn/best-practices/#versioning): new features are added and deprecated are removed in some time, so there is no need to migrate from one API version to another.
 
-The deprecation period will be no less than 3 months after an [announcement](deprecation-schedule.md) in deprecation schedule, but it depends on the feature usage - for the most popular features this period can last for 7 months or more.
+The deprecation period will be no less than 1 months after an [announcement](deprecation-schedule.md) in deprecation schedule, but it depends on the feature usage - for the most popular features this period can last for 7 months or more.
 
 [Check deprecation schedule.](deprecation-schedule.md)
 
