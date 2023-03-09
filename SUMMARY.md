@@ -66,7 +66,7 @@
   * [Flex API](reference/evercloud-api-add-ons/flex-api.md)
 * [Changelog](reference/changelog/README.md)
   * [Evercloud](reference/changelog/evercloud.md)
-  * [Dapp Server (DS)](reference/changelog/dapp-server-ds.md)
+  * [Dapp Server (DS)](reference/release-notes/dapp-server-ds.md)
   * [Simple Emulator (SE)](reference/changelog/simple-emulator-se.md)
 * [Breaking changes](reference/breaking-changes/README.md)
   * [Policy](reference/breaking-changes/policy.md)

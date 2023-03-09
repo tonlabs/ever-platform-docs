@@ -8,8 +8,8 @@ description: Ever Platform products new features, fixes, improvements and breaki
 [evercloud.md](evercloud.md)
 {% endcontent-ref %}
 
-{% content-ref url="dapp-server-ds.md" %}
-[dapp-server-ds.md](dapp-server-ds.md)
+{% content-ref url="../release-notes/dapp-server-ds.md" %}
+[dapp-server-ds.md](../release-notes/dapp-server-ds.md)
 {% endcontent-ref %}
 
 {% content-ref url="simple-emulator-se.md" %}

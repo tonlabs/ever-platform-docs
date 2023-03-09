@@ -4,7 +4,7 @@ description: What is Ever Platform?
 
 # About Ever Platform
 
-Ever Platform provides developers with products, APIs and tools, that help build, test and run applications on  TVM-compatible networks (Everscale, The Open Network (TON), etc).
+Ever Platform provides developers with products, APIs and tools, that help build, test and run applications on  TVM-compatible networks (Everscale, The Open Network (TON), Venom, Gosh, etc).
 
 ### Ever Platform products:
 
