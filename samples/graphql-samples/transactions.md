@@ -36,6 +36,45 @@ Result:
 }
 ```
 
+## Get transaction by inbound message hash
+
+```graphql
+query{
+  transactions(filter:{
+    in_msg:{
+      eq:"d158f7437080f6835792ac0ef9cccbcbd2874a63e8f7f1db9dcb97edc06f410d"
+    }
+  })
+  {
+    id
+    account_addr
+    balance_delta(format:DEC)
+    now
+    now_string
+  }
+}
+
+
+```
+
+Result:
+
+```graphql
+{
+  "data": {
+    "transactions": [
+      {
+        "id": "6e87500efde682124e92f58769b7578fa546f22d46aa844249b51e6c8b63fce4",
+        "account_addr": "0:802f5476cc99425184757c0672fe7737e94b3cbc2cee59e156dfe61c0c0c630c",
+        "balance_delta": "-5110030",
+        "now": 1682457905,
+        "now_string": "2023-04-25 21:25:05.000"
+      }
+    ]
+  }
+}
+```
+
 ## Calculate account fees for transaction
 
 ```graphql
