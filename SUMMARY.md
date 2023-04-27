@@ -19,8 +19,8 @@
 ## Products
 
 * [Evercloud](products/evercloud/README.md)
-  * [Get Started](products/evercloud/get-started.md)
   * [Networks Endpoints](products/evercloud/networks-endpoints.md)
+  * [Get Started](products/evercloud/get-started.md)
   * [GraphQL API documentation](products/evercloud/graphql-api-documentation.md)
   * [Testnet Faucets](products/evercloud/devnet-faucet.md)
   * [About data proofs in Cloud](products/evercloud/about-data-proofs-in-cloud.md)
