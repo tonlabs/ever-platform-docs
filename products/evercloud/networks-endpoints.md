@@ -1,5 +1,5 @@
 ---
-description: Connect to Mainnet public shared endpoints
+description: Connect to TVM networks public shared endpoints
 ---
 
 # Networks Endpoints
