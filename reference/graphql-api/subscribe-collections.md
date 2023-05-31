@@ -11,8 +11,8 @@ Read filter syntax and collections documentation [in the previous section](query
 In this example, we start a subscription and get a result whenever a new block is generated.
 
 ```graphql
-subscription{
-  blocks{
+subscription {
+  blocks {
     id
   }
 }
@@ -30,47 +30,65 @@ wscat -c your-wss-endpoint -s graphql-ws
 
 {% tab title="ever-sdk-js" %}
 ```javascript
-const {TonClient} = require("@eversdk/core");
-const {libNode} = require("@eversdk/lib-node");
+const {TonClient} = require('@eversdk/core');
+const {libNode} = require('@eversdk/lib-node');
 
 TonClient.useBinaryLibrary(libNode)
 
 const client = new TonClient({
-    network: {
-        endpoints: [
-            "your-endpoint"
-        ],
-        queries_protocol: WS
-    },
+  network: {
+    endpoints: [
+      process.env.endpoint
+    ],
+    queries_protocol: 'WS'
+  },
 });
+
+
+function responseHandler(data, responseType) {
+  // Tip: Always wrap the logic inside responseHandler in a try-catch block
+  // or you will be surprised by non-informative errors due to the context
+  // in which the handler is executed
+  try {
+    if (responseType === 100 /* GraphQL data received */) {
+      if (data?.result?.blocks) {
+        console.log(data.result.blocks);
+      }
+
+    } else {
+      // See full list of error codes here:
+      // https://docs.everos.dev/ever-sdk/reference/types-and-methods/mod_net#neterrorcode
+      console.error(data, responseType);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 (async () => {
     try {
-        queryString = `
-            query{
-                blockchain{
-                blocks(workchain:-1, last:1){
-                    edges{
-                    node{
-                        hash
-                        seq_no
-                    }
-                    }
-                }
-                }
-            }
-        `
-        let {seq_no, hash} = (await client.net.query({ 
-            "query": queryString }))
-        .result.data.blockchain.blocks.edges[0].node;
-        console.log("The last masterchain block seqNo is " + seq_no+ '\n' + "the hash is" + hash);
-        client.close();
-}
-    catch (error) {
-            console.error(error);
+      const subscription = /* language=graphql */ `subscription($wc: Int!) {
+          blocks(filter: { workchain_id: { eq: $wc } }) {
+              seq_no
+              id
+          }
+      }`
+      await client.net.subscribe({
+        subscription,
+        variables: {wc: -1},
+      }, responseHandler)
+      console.log('The last masterchain blocks')
+      console.log('Press CTRL+C to interrupt it')
+    } catch (error) {
+      if (error.code === 504) {
+        console.error('Network is inaccessible');
+      } else {
+        console.error(error);
+      }
+      process.exit(1);
     }
-}
-)()
+  }
+)();
 ```
 {% endtab %}
 
