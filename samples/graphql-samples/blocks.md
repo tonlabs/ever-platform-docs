@@ -164,37 +164,37 @@ To check if the next page exists - we ask for `pageInfo.hasNextPage` parameter. 
 
 Check other available parameters in GraphQL schema in playground.
 
-Here we continue pagination within the same `seq_no` range, and ask for the next 10 blocks after the last cursor in the previous query. We see that the next page exists so we can continue paginating whithin the same `seq_no` range.
+Here we continue pagination within the same `seq_no` range, and ask for the next 10 blocks after the last cursor in the previous query. We see that the next page exists so we can continue paginating within the same `seq_no` range.
 
 ```graphql
 query {
-  blockchain{
-    workchain_blocks(
-      master_seq_no: {
-        start: 2660661
-        end: 2670661
-      }
-          after:"52899800052a51fc01"
-          first:10
-          workchain:0
-    ) {
-      edges {
-        node {
-          workchain_id
-          id
-          shard
-          seq_no
-          hash
-          file_hash
+    blockchain {
+        blocks(
+            master_seq_no_range: {
+                start: 2660661
+                end: 2670661
+            }
+            after: "52899800052a51fc01"
+            first: 10
+            workchain: 0
+        ) {
+            edges {
+                node {
+                    workchain_id
+                    id
+                    shard
+                    seq_no
+                    hash
+                    file_hash
+                }
+                cursor
+            }
+            pageInfo {
+                endCursor
+                hasNextPage
+            }
         }
-            cursor
-      }
-          pageInfo{
-            endCursor
-            hasNextPage
-          }
     }
-  }
 }
 ```
 
