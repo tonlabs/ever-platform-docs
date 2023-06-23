@@ -10,7 +10,7 @@ Learn how to read API documentation.
 
 Then move to making an api request with curl.
 
-And integrate it with ever-sdk.&#x20;
+And integrate it with [Ever SDK](https://docs.everos.dev/ever-sdk/).&#x20;
 
 ## Playground
 

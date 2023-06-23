@@ -101,7 +101,7 @@ query{
 
 ### Filter parameters
 
-You can flter account transactions by these parameters:
+You can filter account transactions by these parameters:
 
 ```graphql
 
@@ -180,7 +180,7 @@ Result
 }
 ```
 
-Use `endCursor` field for further pagination and `hasNextCursor` for identifying if more records exist.
+Use `endCursor` field for further pagination and `hasNextPage` for identifying if more records exist.
 
 ## Pagination of account's messages
 
@@ -308,7 +308,7 @@ Result. We see that the next page exists, we can continue pagination.
       }
     }
   }
-}gra
+}
 ```
 
 ### Account events
@@ -424,7 +424,7 @@ Result
       }
     }
   }
-}кф
+}
 ```
 
 ### Transfers between 2 accounts
