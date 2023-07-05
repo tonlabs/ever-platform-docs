@@ -10,7 +10,7 @@ The deprecation period will be no less than 1 months after an [announcement](dep
 
 [Check deprecation schedule.](deprecation-schedule.md)
 
-While deprecated functionality remains available until the scheduled sunset date, users are encouraged to use the deprecation period to migrate to new functionality (check [migration guides](migration-guides.md)), or - if no functionality is available - notify about it in [telegram group](https://t.me/ever\_sdk). After the sunset date, deprecated versions will no longer be available.
+While deprecated functionality remains available until the scheduled sunset date, users are encouraged to use the deprecation period to migrate to new functionality (check [migration guides](migration-guides/)), or - if no functionality is available - notify about it in [telegram group](https://t.me/ever\_sdk). After the sunset date, deprecated versions will no longer be available.
 
 
 

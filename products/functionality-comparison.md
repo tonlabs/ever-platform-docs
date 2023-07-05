@@ -6,16 +6,4 @@ description: Comparison of GraphQL functionality across products
 
 
 
-| Feature                                                  | Evercloud | DS  | SE  | Dedicated cloud | Dedicated Node |
-| -------------------------------------------------------- | --------- | --- | --- | --------------- | -------------- |
-| historic data available (transactions, blocks, messages) | yes       | no  | -   | yes             | yes            |
-| blockchain API                                           | yes       | yes | yes | yes             | yes            |
-| collections (blocks, transactions, accounts, messages)   | yes       | yes | yes | yes             | yes            |
-| aggregations (blocks, transactions, accounts, messages)  | yes       | yes | yes | yes             | yes            |
-| subscriptions                                            | yes       | yes | yes | yes             | yes            |
-| FT(Token) API                                            | yes       | no  | no  | yes             | no             |
-| NFT API                                                  | 1Q 2023   | no  | no  | yes             | no             |
-| statistics                                               | yes       | no  | no  | yes             | no             |
-| counterparties                                           | yes       | no  | no  | yes             | no             |
-| price                                                    | soon      | no  | no  | no              | no             |
-| zerostates                                               | yes       | yes | no  | yes             | yes            |
+<table><thead><tr><th width="222">Feature</th><th width="112">Evercloud</th><th width="85">DS</th><th width="87">SE</th><th width="112">Dedicated cloud</th><th width="114">Dedicated Node</th></tr></thead><tbody><tr><td>historic data available (transactions, blocks, messages)</td><td>yes</td><td>no</td><td>-</td><td>yes</td><td>yes</td></tr><tr><td>blockchain API</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>collections (blocks, transactions, accounts, messages)</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>aggregations (blocks, transactions, accounts, messages)</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>subscriptions</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>FT(Token) API</td><td>yes</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr><tr><td>NFT API </td><td>1Q 2023</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr><tr><td>statistics</td><td>yes</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr><tr><td>counterparties</td><td>yes</td><td>no</td><td>no</td><td>yes</td><td>no</td></tr><tr><td>price</td><td>soon</td><td>no</td><td>no</td><td>no</td><td>no</td></tr><tr><td>zerostates</td><td>yes</td><td>yes</td><td>no</td><td>yes</td><td>yes</td></tr></tbody></table>

@@ -8,12 +8,7 @@ Ever Platform provides developers with products, APIs and tools, that help build
 
 ### Ever Platform products:
 
-| Platform                                              | Description                                                | Target Audience                                                                                                        |
-| ----------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [Evercloud](products/evercloud/)                      | Scalable API with SLA                                      | From small to large businesses who don't want to manage their infrastructure                                           |
-| [Dedicated Cloud](use-cases/infrastructure-provider/) | Dedicated API for best performance                         | Enterprises and heavy-load Dapps who want to have the best API performance with ability to extend it with custom APIs. |
-| [Dapp Server](products/dapp-server-ds.md)             | Community Free version of the platform                     | Those who want to run and maintain their own node with basic API                                                       |
-| [Simple Emulator](products/simple-emulator-se/)       | Free lightweight platform emulator, for local development. | DApp and contract developers and testers, who want to test locally before testing on the real networks                 |
+<table><thead><tr><th width="179">Platform</th><th width="183.33333333333331">Description</th><th>Target Audience</th></tr></thead><tbody><tr><td><a href="products/evercloud/">Evercloud</a></td><td>Scalable API with SLA</td><td>From small to large businesses who don't want to manage their infrastructure</td></tr><tr><td><a href="use-cases/infrastructure-provider/">Dedicated Cloud</a></td><td>Dedicated API for best performance</td><td>Enterprises and heavy-load Dapps who want to have the best API performance with ability to extend it with custom APIs.</td></tr><tr><td><a href="products/dapp-server-ds.md">Dapp Server</a></td><td>Community Free version of the platform</td><td>Those who want to run and maintain their own node with basic API</td></tr><tr><td><a href="products/simple-emulator-se/">Simple Emulator</a></td><td>Free lightweight platform emulator, for local development.</td><td>DApp and contract developers and testers, who want to test locally before testing on the real networks</td></tr></tbody></table>
 
 ### API
 

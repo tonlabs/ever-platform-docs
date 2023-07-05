@@ -26,4 +26,4 @@ If you want to have low response time you can purchase [Dedicated Cloud](../../u
 
 There is a limit of 100 connections per second from 1 IP. No additional limit policy is introduced yet. Soon, we will introduce query cost based limit policy.
 
-## ****
+##

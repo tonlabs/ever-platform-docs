@@ -161,7 +161,7 @@ Queries:
   * `getAccountsTotalBalance`
 * `QueryExplanation` type
 
-[Migration guide](../breaking-changes/migration-guides.md)
+[Migration guide](../breaking-changes/migration-guides/)
 
 [Deprecation schedule](../breaking-changes/deprecation-schedule.md)
 
@@ -169,5 +169,5 @@ Queries:
 
 ### New features
 
-``[`Statistics`](https://docs.everos.dev/ever-sdk/samples/graphql-samples/statistics) API
+[`Statistics`](https://docs.everos.dev/ever-sdk/samples/graphql-samples/statistics) API
 

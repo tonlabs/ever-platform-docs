@@ -73,7 +73,8 @@
 * [Breaking changes](reference/breaking-changes/README.md)
   * [Policy](reference/breaking-changes/policy.md)
   * [Deprecation schedule](reference/breaking-changes/deprecation-schedule.md)
-  * [Migration guides](reference/breaking-changes/migration-guides.md)
+  * [Migration guides](reference/breaking-changes/migration-guides/README.md)
+    * [GraphQL API 1.0 migration](reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md)
 
 ## SDK and tools
 
