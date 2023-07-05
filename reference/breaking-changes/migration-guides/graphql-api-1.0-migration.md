@@ -72,7 +72,7 @@ Detailed documentation of Blockchain API is available [here](https://docs.evercl
 
 ## Migration guide
 
-To prepare for the transition from current functionality to the new one, and make sure it happens seamlessly, developers should migrate their queries as soon as possible - before the actual release of the new API, which will happen in August 2023.
+To prepare for the transition from current functionality to the new one, and make sure it happens seamlessly, developers should migrate their queries as soon as possible - before the actual release of the new API, which will happen in the end of August 2023.
 
 We have released a flag called '`archive`' for this purpose. Currently, this flag has no functionality (the API works the same way whether `archive=true` or `false`), but it helps in migrating to the new API. When you migrate, the switch from the old API to the new one will be under the hood and invisible to your application.
 
