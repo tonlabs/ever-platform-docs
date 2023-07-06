@@ -276,6 +276,58 @@ If there is no index for your query, you will get the error message: **"Query wa
 **You can find the list of available indexes in the error data section.**
 {% endhint %}
 
+Error log sample for a not optimized blocks collection query
+
+```graphql
+{
+  "errors": [
+    {
+      "message": "Slow queries are disabled. Query was detected as a slow. Available indexes can't be used for filter fields. See error data for details.",
+      "path": [
+        "blocks"
+      ],
+      "extensions": {
+        "code": "INTERNAL_SERVER_ERROR",
+        "exception": {
+          "data": {
+            "slowReason": {
+              "summary": "Available indexes can't be used for filter fields",
+              "fields": [
+                "min_ref_mc_seqno ==",
+                "rand_seed >"
+              ],
+              "availableIndexes": [
+                "seq_no, gen_utime",
+                "gen_utime",
+                "workchain_id, shard, seq_no",
+                "workchain_id, shard, gen_utime",
+                "workchain_id, seq_no",
+                "workchain_id, key_block, seq_no",
+                "workchain_id, gen_utime",
+                "workchain_id, tr_count, gen_utime",
+                "master.min_shard_gen_utime",
+                "prev_ref.root_hash, _key",
+                "prev_alt_ref.root_hash, _key",
+                "tr_count, gen_utime",
+                "chain_order",
+                "key_block, chain_order",
+                "workchain_id, chain_order",
+                "workchain_id, shard, chain_order",
+                "_key"
+              ],
+              "selectedIndexes": []
+            }
+          }
+        }
+      }
+    }
+  ],
+  "data": {
+    "blocks": null
+  }
+}
+```
+
 ### Scalar filters
 
 Scalar filter is a structure with one or more predefined fields. Each field defines a specific scalar operation and a reference value:
