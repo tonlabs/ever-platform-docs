@@ -18,7 +18,7 @@ There are 4 types of documents:
 * messages
 * block signatures
 
-All [Evernode Platform](../../products/functionality-comparison.md) products provide query, analytics and subscription functionality for these collections.
+All [Evernode Platform](../../products/functionality-comparison.md) products provide query, analytics and subscription functionality for the last 7 days of blocks, transactions, messages. And full collection of accounts.
 
 ```graphql
 query{
@@ -45,6 +45,8 @@ subscription{
     block_signatures
 }
 ```
+
+
 
 ## Support in Client Libraries
 
@@ -253,6 +255,16 @@ subscription{
 The `filter` and `result` parameters are the same as in the `query` method. The `filter` parameter narrows the action down to a subset of monitored items. In this case, the filter is empty: all items are included into monitoring.
 
 ## Filtration
+
+### Indexes
+
+{% hint style="danger" %}
+Not all filter combinations are available in Evercloud. We investigated most important use-cases and configured a set of indexes for them.&#x20;
+
+If there is no index for your query, you will get the error message: **"Query was detected as a slow. Available indexes can't be used for filter fields. See error data for details."**&#x20;
+
+**You can find the list of available indexes in the error data section.**
+{% endhint %}
 
 > Filtration applies only to collection query types
 
