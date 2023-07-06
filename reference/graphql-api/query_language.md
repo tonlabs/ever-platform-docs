@@ -256,6 +256,16 @@ The `filter` and `result` parameters are the same as in the `query` method. The 
 
 ## Filtration
 
+Filters applied to query functions are data structures matching collection item with several extra features:
+
+* The value for scalar fields (e.g. strings, numbers etc.) is a structure with the `scalar filter`.
+* The value for array fields is a structure with an `array filter`.
+* The value for nested structures is a filter for `nested structure`.
+
+These filter types will be described in more details below in this section.
+
+> Filtration applies only to collection query types
+
 ### Indexes
 
 {% hint style="danger" %}
@@ -265,16 +275,6 @@ If there is no index for your query, you will get the error message: **"Query wa
 
 **You can find the list of available indexes in the error data section.**
 {% endhint %}
-
-> Filtration applies only to collection query types
-
-Filters applied to query functions are data structures matching collection item with several extra features:
-
-* The value for scalar fields (e.g. strings, numbers etc.) is a structure with the `scalar filter`.
-* The value for array fields is a structure with an `array filter`.
-* The value for nested structures is a filter for `nested structure`.
-
-These filter types will be described in more details below in this section.
 
 ### Scalar filters
 
