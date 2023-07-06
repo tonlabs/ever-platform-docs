@@ -11,6 +11,8 @@ description: >-
 {% hint style="danger" %}
 There will be several announcements prior to the actual API transition, which is planned for approximately the end of August 2023.
 
+The transition will first happen on Venom testnet network, later followed by other supported networks.
+
 To stay updated on the transition, you can monitor [this](https://docs.evercloud.dev/reference/breaking-changes/deprecation-schedule) page or join [this](https://t.me/ever\_sdk\_channel) channel for announcements.
 {% endhint %}
 
