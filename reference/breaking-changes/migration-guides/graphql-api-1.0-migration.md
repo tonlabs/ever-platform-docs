@@ -180,9 +180,11 @@ query {
 
 ### Get account messages after timestamp
 
-Get 100 messages of account $p3 of type $p2 created after timestamp $p1 sorted by creation timestamp ASC.
+Get 100 messages of account $p3 of type $p2 created after timestamp $p1 with value>0 sorted by creation timestamp ASC.
 
 Old query
+
+Pagination is implemented by created\_at field. To get the next 50 messages one needs to get pass the created\_at value $p1 of the last message into the created\_at:{gt:$p1} filter.
 
 {% hint style="info" %}
 ☝ Pagination was implemented by created\_at timestamp. Please, note that this pagination is not correct and may end up with data loss in case of several messages (more than 50) created per 1 second, which may happen in highly loaded blockchains.
@@ -195,6 +197,7 @@ query {
 		created_at : { gt : $p1 } 
 		msg_type_name : { eq : $p2 } 
 		src_account : { id : { eq : $p3 } } 
+		value: {gt: "0x0"}
 	} 
 	limit : 50 
 	orderBy : { direction : ASC path : "created_at" } ) 
@@ -227,13 +230,13 @@ query{
 }
 ```
 
-Now query first page (one page is 50 messages) messages starting from $start
+Now query first page (one page is 50 messages) messages starting from $start with min value=1 nanotoken.
 
 ```graphql
 query{
   blockchain{
     account(address: $p3){
-      messages(master_seq_no_range:{start:$start_seqno}, first:50, archive: true){
+      messages(master_seq_no_range:{start:$start_seqno}, min_value:"0x1", first:50, archive: true){
         edges{
           node{
             boc 
@@ -261,7 +264,7 @@ And now the second page after `endCursor` = “59e5c7c0059f9522070001”
 query{
   blockchain{
     account(address: $p3){
-      messages(master_seq_no_range:{start:$start_seqno}, first:50, after:"59e5c7c0059f9522070001"){
+      messages(master_seq_no_range:{start:$start_seqno}, min_value:"0x1", first:50, after:"59e5c7c0059f9522070001"){
         edges{
           node{
             boc 
