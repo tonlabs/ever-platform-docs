@@ -232,13 +232,20 @@ query{
 }
 ```
 
-Now query first page (one page is 50 messages) messages starting from $start with min value=1 nanotoken.
+Now query first page (one page is 50 messages) messages of needed types starting from $start with min value=1 nanotoken.
+
+Available message types are&#x20;
+
+* `ExtIn` (External inbound), &#x20;
+* `ExtOut` (External outbound), &#x20;
+* `IntIn` (Internal inbound), &#x20;
+* `IntOut` (Internal outbound).
 
 ```graphql
 query{
   blockchain{
     account(address: $p3){
-      messages(master_seq_no_range:{start:$start_seqno}, min_value:"0x1", first:50, archive: true){
+      messages(master_seq_no_range:{start:$start_seqno}, msg_type:[$p2_type1, $p2_type2], min_value:"0x1", first:50, archive: true){
         edges{
           node{
             boc 
@@ -266,7 +273,7 @@ And now the second page after `endCursor` = “59e5c7c0059f9522070001”
 query{
   blockchain{
     account(address: $p3){
-      messages(master_seq_no_range:{start:$start_seqno}, min_value:"0x1", first:50, after:"59e5c7c0059f9522070001"){
+      messages(master_seq_no_range:{start:$start_seqno}, msg_type:[$p2_type1, $p2_type2],min_value:"0x1", first:50, after:"59e5c7c0059f9522070001"){
         edges{
           node{
             boc 
