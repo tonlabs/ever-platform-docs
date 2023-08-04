@@ -43,6 +43,7 @@
   * [Transactions](samples/graphql-samples/transactions.md)
   * [Messages](samples/graphql-samples/messages.md)
   * [Block and Transaction Pagination: Best Practice](samples/graphql-samples/block-and-transaction-pagination-best-practice.md)
+  * [Message Processing and Monitoring](samples/graphql-samples/message-processing-and-monitoring.md)
   * [Subscribe for REMP receipts](samples/graphql-samples/subscribe-for-remp-receipts.md)
 
 ## Reference
@@ -58,6 +59,7 @@
   * [Info API](reference/graphql-api/info.md)
   * [Query Collections: Query Language](reference/graphql-api/query\_language.md)
   * [Subscribe Collections](reference/graphql-api/subscribe-collections.md)
+  * [Message Monitor API](reference/graphql-api/message-monitor-api.md)
   * [Field Descriptions](reference/graphql-api/field\_descriptions.md)
 * [Evercloud API Add-ons](reference/evercloud-api-add-ons/README.md)
   * [Query cost](reference/evercloud-api-add-ons/query-cost.md)
