@@ -1,5 +1,9 @@
 # Accounts
 
+{% hint style="info" %}
+**Note**: With [graphql-api-1.0-migration.md](../../reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md "mention") by default Blockchain API provides only data for the past 7 days. For use cases where earlier data is needed make sure to use the `archive: true` flag in `blockchain` query filters.
+{% endhint %}
+
 ## Get account info
 
 To get account info use the following GraphQL query:
@@ -128,7 +132,8 @@ Let's paginate some account transactions from the very first one:
 query {
   blockchain{
    account(address:"0:653b9a6452c7a982c6dc92b2da9eba832ade1c467699ebb3b43dca6d77b780dd"){
-    transactions{
+    transactions(archive: true)
+    {
       edges{
         node{
           id
@@ -245,7 +250,7 @@ Lets get first 2 transfers some account received or sent. So we need to get inco
 query{
   blockchain{
     account(address:"-1:99392dea1c5035feddb1bb3db9e71138d82868f7460c6da3dca26f0520798ebd"){
-      messages(msg_type:[IntIn, IntOut],first:2){
+      messages(msg_type:[IntIn, IntOut],first:2, archive:true){
         edges{
           node{
             src
