@@ -132,39 +132,6 @@ everdev network credentials main --project "your-project-id"
 ```
 {% endtab %}
 
-{% tab title="tonos-cli" %}
-```
-tonos-cli config --url "mainnet.evercloud.dev" --project_id "your-project-id"
-Succeeded.
-{
-  "url": "mainnet.evercloud.dev",
-  "wc": 0,
-  "addr": null,
-  "method": null,
-  "parameters": null,
-  "wallet": null,
-  "pubkey": null,
-  "abi_path": null,
-  "keys_path": null,
-  "retries": 5,
-  "timeout": 60000,
-  "message_processing_timeout": 40000,
-  "out_of_sync_threshold": 15,
-  "is_json": false,
-  "depool_fee": 0.5,
-  "lifetime": 60,
-  "no_answer": true,
-  "balance_in_tons": false,
-  "local_run": false,
-  "async_call": false,
-  "debug_fail": "None",
-  "project_id": "your-project-id",
-  "access_key": null,
-  "endpoints": []
-}
-```
-{% endtab %}
-
 {% tab title="JS fetch" %}
 ```javascript
 var myHeaders = new Headers();
@@ -271,39 +238,6 @@ const client = new TonClient({
 {% tab title="everdev" %}
 ```
 everdev network credentials main --project "Project Id" --access-key "Project secret"
-```
-{% endtab %}
-
-{% tab title="tonos-cli" %}
-```
-tonos-cli config --url "mainnet.evercloud.dev" --project_id "your-project-id id" --access_key "Project secret"
-Succeeded.
-{
-  "url": "mainnet.evercloud.dev",
-  "wc": 0,
-  "addr": null,
-  "method": null,
-  "parameters": null,
-  "wallet": null,
-  "pubkey": null,
-  "abi_path": null,
-  "keys_path": null,
-  "retries": 5,
-  "timeout": 60000,
-  "message_processing_timeout": 40000,
-  "out_of_sync_threshold": 15,
-  "is_json": false,
-  "depool_fee": 0.5,
-  "lifetime": 60,
-  "no_answer": true,
-  "balance_in_tons": false,
-  "local_run": false,
-  "async_call": false,
-  "debug_fail": "None",
-  "project_id": "your-project-id",
-  "access_key": "project-secret",
-  "endpoints": []
-}
 ```
 {% endtab %}
 
