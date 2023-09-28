@@ -1,12 +1,12 @@
 # Accounts
 
 {% hint style="info" %}
-**Note**: With [graphql-api-1.0-migration.md](../../reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md "mention") by default Blockchain API provides only data for the past 7 days. For use cases where earlier data is needed make sure to use the `archive: true` flag in `blockchain` query filters.
+**Note**: With [graphql-api-1.0-migration.md](../../reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md "mention") by default Blockchain API provides only transactions and messages for the past 7 days. For use cases where earlier data is needed make sure to use the `archive: true` flag in `blockchain` query filters.
 {% endhint %}
 
 ## Get account info
 
-To get account info use the following GraphQL query:
+To get account info **including BOC, data and code**, use the following GraphQL query:
 
 ```graphql
 query {
@@ -77,16 +77,120 @@ fields:
 * `code_hash` - hash of account code
 * `library_hash` - library field hash
 
-## Pagination of account transactions
+## Filter accounts
 
-Use-cases:
+If you need to filter accounts by some condition and paginate them, use accounts collection.
 
-* Collect account operations with detailed fees information
+Use id(account address) as cursor for pagination.&#x20;
+
+{% hint style="warning" %}
+Remember, you can not retrieve account BOCs with this query. Retrieve each account's BOC individually with this [query](accounts.md#get-account-info).
+{% endhint %}
+
+#### Paginate accounts having same code\_hash:
+
+```graphql
+query{
+  accounts(
+    filter:{
+      workchain_id:{
+        eq:0
+      },
+      code_hash:{
+        eq:"80d6c47c4a25543c9b397b71716f3fae1e2c5d247174c52e2c19bd896442b105"
+      }
+      id:{
+        gt:"0:001a338e4af5fe33307c2b0d04de453513019942748eb2b290ca3db0adfe8343"
+      }
+    }
+    orderBy:[
+      {
+        path:"id",
+        direction:ASC
+      }
+    ]
+  ){
+    id
+    balance(format:DEC)
+    last_paid
+  }
+}
+```
+
+#### Paginate accounts having same code\_hash, updated after timestamp
+
+```graphql
+query{
+  accounts(
+    filter:{
+      workchain_id:{
+        eq:0
+      },
+      code_hash:{
+        eq:"80d6c47c4a25543c9b397b71716f3fae1e2c5d247174c52e2c19bd896442b105"
+      }
+      last_paid:{
+        ge:1687023485
+      }
+      id:{
+        gt:"0:001a338e4af5fe33307c2b0d04de453513019942748eb2b290ca3db0adfe8343"
+      }
+    }
+    orderBy:[
+      {path:"last_paid", direction:ASC}      
+      {path:"id", direction:ASC}
+    ]
+  ){
+    id
+    balance(format:DEC)
+    last_paid
+  }
+}
+```
+
+## Get a list of accounts
+
+You can enumerate a list of account addresses to get their balances and other metadata.
+
+{% hint style="warning" %}
+You can not get the list of BOCs of accounts. Retrieve each account's BOC individually with this [query](accounts.md#get-account-info).
+{% endhint %}
+
+```graphql
+query{
+  accounts(
+    filter:{
+    	id:{
+        in:[
+          "0:001b3abc5f9e906990c2eee7a1664be20b1b47fdf5c140331e6003786735f453",
+          "0:2ef022951ae41da58f16f5e3f10d8660c919c13304723a401050fb02027301f6",
+          "0:34b83eee15f43580261c4ec654c2b03dcb2b8a99ab0b5257105be815cf040c6b",
+          "0:684c7604fcc86bece98136f83c8370bd73feb574c11b27b2f03b2a53c778230c",
+          "0:8f0be7f1e442ad576785c9b77dbe3ffb362260e828736957158449802397a48e"
+        ]
+      }
+  	}
+  ){
+    id
+    balance(format:DEC)
+    last_paid
+    last_trans_lt
+  }
+}
+```
+
+## Get transactions within block seqno range
+
+### Use-cases
+
+* Paginate transactions to get both transactions and messages of account within the required masterchain seqno range - handy way to order data when you need to link it with seqno.&#x20;
+* Collect account transactions with detailed fees information
 * Collect account balance history by pre-processing `balance_delta` changes on your side
 * Query new account transactions to trigger some logic on your side
 * Optionally filter transactions by `Aborted` type or `balance_delta` value
+* Pull transactions for a period if your websocket subscription failed (use last`Transaction.chain_order` field as `after` cursor ;-) )
 
-### Pagination range
+### Blocks range
 
 Use `master_seq_no_range` parameter to specify masterchain block sequence number range inside of which you will paginate transactions.&#x20;
 
@@ -108,8 +212,12 @@ query{
 You can filter account transactions by these parameters:
 
 ```graphql
-
-# specify if you are okay with data eventual consistency
+# Specify true, if you prefer minimum latency over consistency, besause 
+# Evercloud API is eventually consistent.
+# In this case you need to periodically recheck the previous data within some time window
+# We suggest 5 minutes window to get any missed transactions.
+# Default is false which means the data is consistent but 
+# latency may be over 10 seconds.
 allow_latest_inconsistent_data: Boolean 
 aborted: Boolean
 min_balance_delta: String
@@ -124,8 +232,6 @@ Use `cursor`, {`first`, `after`} or {`last`, `before`} filters for pagination.
 We followed GraphQL best practices and implemented Relay Cursor Connections Specification for pagination for all list types. You can read more here [https://relay.dev/graphql/connections.htm](https://relay.dev/graphql/connections.htm)
 {% endhint %}
 
-
-
 Let's paginate some account transactions from the very first one:
 
 ```graphql
@@ -136,8 +242,17 @@ query {
     {
       edges{
         node{
-          id
           hash
+          in_message{
+            hash
+            value
+            body
+          }
+          out_messages{
+            hash
+            value
+            body
+          }
           
         }
       }
@@ -162,14 +277,14 @@ Result
           "edges": [
             {
               "node": {
-                "id": "transaction/172880ec68742d85cbbae19cda7bf900d2701c65847b8e11158142fc4af89099",
-                "hash": "172880ec68742d85cbbae19cda7bf900d2701c65847b8e11158142fc4af89099"
-              }
-            },
-            {
-              "node": {
-                "id": "transaction/c5ec73599e55d9257ca9e072ce867ab996c579b81ebc003acca121f7fb4797f6",
-                "hash": "c5ec73599e55d9257ca9e072ce867ab996c579b81ebc003acca121f7fb4797f6"
+                "hash": "c8153cd353bf90c7c1214d8c1a50a30ea6d0d900f0f6c7242d1434644c1e49fb",
+                "hash": "c8153cd353bf90c7c1214d8c1a50a30ea6d0d900f0f6c7242d1434644c1e49fb",
+                "in_message": {
+                  "hash": "c2b064872a2ce6db65ca724a03d1be5de37abe784c658ef4d5998249b9643144",
+                  "value": "0x229bd2a5eb3ef4",
+                  "body": null
+                },
+                "out_messages": []
               }
             },
             ...
@@ -187,15 +302,117 @@ Result
 
 Use `endCursor` field for further pagination and `hasNextPage` for identifying if more records exist.
 
-## Pagination of account's messages
+## Get transactions after/before lt
+
+Sometimes you just need a simple pagination of transactions by logical time. This may be useful for contract developers, for debug, etc. This type of pagination can be used only for a single account transactions pagination.
+
+```graphql
+query {
+  blockchain{
+   account(address:"0:653b9a6452c7a982c6dc92b2da9eba832ade1c467699ebb3b43dca6d77b780dd"){
+    transactions_by_lt(after:"0x235ceea8c1", archive: true)
+    {
+      edges{
+        node{
+          id
+          hash
+          in_message{
+            id
+            value
+            body
+          }
+          out_messages{
+            id
+            value
+            body
+          }
+          lt
+          
+        }
+      }
+      pageInfo{
+        endCursor
+        hasNextPage
+      }
+    }
+  }
+  }
+}
+```
+
+Here you see `lt` in hex was specified as `after` cursor.&#x20;
+
+See the result: `endCursor` for the page is equal to the last `lt`:
+
+```graphql
+{
+  "data": {
+    "blockchain": {
+      "account": {
+        "transactions_by_lt": {
+          "edges": [
+            {
+              "node": {
+                "id": "transaction/13b40676d090cf567e82b5fb50c3029bb614fae0a4b2aa1da9dcfbbdbccb92f6",
+                "hash": "13b40676d090cf567e82b5fb50c3029bb614fae0a4b2aa1da9dcfbbdbccb92f6",
+                "in_message": {
+                  "id": "message/3c469ee0f06fb3f6b8dd983367b5dcbbe613f98e14f29a9db6da2242a2f66648",
+                  "value": null,
+                  "body": "te6ccgEBAQEAMAAAWwAAAL7uRECtNl1VjUAPPxqUkMve8d+bYUDXzRZ9/TFsEpR6pZbY6TFLHtOS7Qg="
+                },
+                "out_messages": [
+                  {
+                    "id": "message/8771caa71664e71e0291250fbf5e3b1e4c0a05cb52a7b9eb448f64a9ff1b5222",
+                    "value": "0x174876e800",
+                    "body": null
+                  }
+                ],
+                "lt": "0x235fda5701"
+              }
+            },
+    ...
+            {
+              "node": {
+                "id": "transaction/acff57f31901b3bce4cc7bcdc72a4a2b772128a93d03605a388245d92033ec7e",
+                "hash": "acff57f31901b3bce4cc7bcdc72a4a2b772128a93d03605a388245d92033ec7e",
+                "in_message": {
+                  "id": "message/d43453dd70fe8b0725f4d5d1904a025caa79b71ae8d27747e7b60cc86895caaa",
+                  "value": null,
+                  "body": "te6ccgEBAQEAMAAAWwAAAL7uzsIJNl1VjUAPzHHH9poFkmGyCSvGdpmTGxZlkvG2qBoZqqFMA/8dxyg="
+                },
+                "out_messages": [
+                  {
+                    "id": "message/f025ccb779f5ea5bdb15741d04ca35da4cfb767ab34853b73089d70159c0a2e6",
+                    "value": "0x174876e800",
+                    "body": null
+                  }
+                ],
+                "lt": "0x24fd26c881"
+              }
+            }
+          ],
+          "pageInfo": {
+            "endCursor": "0x24fd26c881",
+            "hasNextPage": true
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## Get messages within block range
 
 Use-cases:
 
-* see transfers that some account sent or received
-* monitor account's events
-* monitor external calls of an account
-* retrieve transfers between an account and some counterparty account
+* get transfers that some account sent or received
+* get account's events
+* get external calls of an account
+* get transfers between an account and some counterparty account
+* get account events to an external address
 * optionally filter messages by value amount
+* Pull messages for a period if your websocket subscription failed (use Message`.chain_order` field as `after` cursor ;-) )
 
 In all these cases you need to paginate account messages with some filters applied. Lets see how to do it.
 

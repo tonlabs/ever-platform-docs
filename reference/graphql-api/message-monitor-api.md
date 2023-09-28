@@ -97,5 +97,5 @@ enum MessageMonitoringStatus {
 
 Explore:
 
-* [GraphQL samples](../../samples/graphql-samples/message-processing-and-monitoring.md)
+* [GraphQL samples](../../samples/graphql-samples/multiple-message-processing-and-monitoring.md)
 * [SDK Guide](https://docs.everos.dev/ever-sdk/guides/work\_with\_contracts/monitor-messages)

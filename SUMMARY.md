@@ -43,7 +43,7 @@
   * [Transactions](samples/graphql-samples/transactions.md)
   * [Messages](samples/graphql-samples/messages.md)
   * [Block and Transaction Pagination: Best Practice](samples/graphql-samples/block-and-transaction-pagination-best-practice.md)
-  * [Message Processing and Monitoring](samples/graphql-samples/message-processing-and-monitoring.md)
+  * [Multiple Message Processing and Monitoring](samples/graphql-samples/multiple-message-processing-and-monitoring.md)
   * [Subscribe for REMP receipts](samples/graphql-samples/subscribe-for-remp-receipts.md)
 
 ## Reference
