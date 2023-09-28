@@ -717,6 +717,83 @@ Result:
 
 We see that previous page exists and can continue pagination.
 
+## Subscribe for accounts state updates
+
+You can subscribe for accounts metadata updates: balances or/and last\_trans\_lt, for example Whenever account is updated, you will receive its data:
+
+```graphql
+subscription{
+  accounts(
+    filter:{
+      id:{
+        in:[
+        "-1:3333333333333333333333333333333333333333333333333333333333333333",
+        "0:557957cba74ab1dc544b4081be81f1208ad73997d74ab3b72d95864a41b779a4"
+        ]
+      }
+    }
+  ){
+    id
+    balance(format:DEC)
+    last_trans_lt
+    last_paid
+  }
+}
+```
+
+## Subscribe for accounts transactions
+
+You can subscribe for transactions of a list of accounts
+
+```graphql
+subscription{
+  transactions(
+    filter:{
+      account_addr:{
+        in:[
+          "-1:3333333333333333333333333333333333333333333333333333333333333333",
+          "0:557957cba74ab1dc544b4081be81f1208ad73997d74ab3b72d95864a41b779a4"
+        ]
+      }
+    }
+  ){
+    id
+    lt
+    balance_delta
+  }
+}
+```
+
+## Subscribe for accounts messages
+
+You can subscribe for messages of a list of accounts.&#x20;
+
+You can even subscribe only for external outbound messages, like here:
+
+```graphql
+subscription{
+  messages(
+    filter:{
+      src:{
+        in:[
+          "-1:3333333333333333333333333333333333333333333333333333333333333333",
+          "0:557957cba74ab1dc544b4081be81f1208ad73997d74ab3b72d95864a41b779a4"
+        ]
+      }
+      msg_type: {
+        eq:2
+      }
+    }
+  ){
+    id
+    msg_type
+    src
+    dst
+    value
+  }
+}
+```
+
 ## Get the list of account's counterparties
 
 Returns the paginable list of accounts the account has ever interacted with, with the last message info attached, sorted by the last message time. Useful for applications that want to show a screen with dialog list sorted by the last interaction time.
