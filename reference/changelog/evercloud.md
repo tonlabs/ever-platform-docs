@@ -4,7 +4,7 @@ description: Evercloud API changelog
 
 # Evercloud
 
-## September 9, 2023
+## 0.65.0
 
 New
 
