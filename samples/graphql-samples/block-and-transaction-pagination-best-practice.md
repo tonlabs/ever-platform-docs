@@ -12,7 +12,7 @@ While it might seem more convenient and simple, this is a sub-optimal practice. 
 
 [GraphQL Blockchain API](../../reference/graphql-api/blockchain.md) was developed for this exact reason - to provide a reliable way of blockchain data pagination and prevent any potential data inconsistencies regardless of network load.
 
-**Note**: With [graphql-api-1.0-migration.md](../../reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md "mention") by default Blockchain API provides only data for the past 7 days. For use cases where earlier data is needed make sure to use the `archive: true` flag in `blockchain` query filters, as shown in the samples below. Do not however use it, if archive data isn't required, as it will generate unnecessary load.
+**Note**: With [graphql-api-1.0-migration.md](../../reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md "mention") by default Blockchain API provides blocks, transactions and messages only data for the past 7 days. For use cases where earlier data is needed make sure to use the `archive: true` flag in `blockchain` query filters, as shown in the samples below. Do not however use it, if archive data isn't required, as it will generate unnecessary load.
 
 **Note**: Query Collections are a supported instrument and will remain so. However, they are intended and optimized primarily for tasks that are not critically dependent on data completeness, such as analytics.
 

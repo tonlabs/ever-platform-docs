@@ -4,11 +4,94 @@ description: Evercloud API changelog
 
 # Evercloud
 
+## September 9, 2023
+
+New
+
+* Added field `BlockchainBlock.signatures` – temporarily available only in non archive mode.
+* Added argument `blockchain.account.info(byBlock)` – ability to get the account state from the specified block. Only states for the last several minutes are available (last 5 minutes). This feature can be used to implement consistent behaviour of application on top of nodes cluster.&#x20;
+
+## July 15, 2023
+
+New
+
+* `trace` field in transaction (data is available only in SE)
+* `archive` parameter in blockchain signle-entity fields (`block`, `block_by_seq_no`, `transaction`, `message`).\
+  When is `true` the blockchain requests use an archive database with full blockchain history\
+  but reduced field set.
+* `transactions_by_lt` query is added to `blockchain.account` to paginate account transactions by logical time
+* `thread` parameter in `blockchain.block_by_seq_no` and `blockchain.blocks` is deprecated. `shard` parameter should be used instead
+* `blockchain.prev_shard_blocks` and `blockchain.next_shard_blocks` queries for blocks chain iteration
+* `blockchain.transactions_by_in_msg` query for retrieving transaction by inbound message
+* `blocks` collection latency is calculated from `gen_utime` of masterchain block which has commited last known shard block
+
+## June 22, 2023
+
+### New
+
+* Added parameter `archive` to blockchain lists fields.\
+  When is `true` the blockchain requests use an archive database with full blockchain history\
+  but reduced field set.
+
+## June 19, 2023
+
+### New
+
+* Added helpful error messages in case of invalid `in` and `notIn` filter `{in: null}`.
+
+## June 7, 2023
+
+### New
+
+* `master_seq_no` field in blocks, transactions and messages representing seq\_no of masterchain block\
+  which committed the block, transaction or message
+* `chain_order` in messages is derived from `src_chain_order` and `dst_chain_order`
+* `message.counterparties` in `blockchain` API are not limited to internal messages
+
+## May 10, 2023
+
+### New
+
+* Case-insensitive filtering in args:\
+  `blockchain.block(hash)`, `blockchain.transaction(hash)`, `blockchain.message(hash)`
+* Address filtering in args (accepts address in any format):\
+  `blockchain.account(address)`, `messages.src`, `messages.dst`, `transactions.account_addr`, `accounts.id`
+* Address formatting args in fields:\
+  `blockchain.account.info.address`, `blockchain.transaction.account_addr`,\
+  `blockchain.message.src`, `blockchain.message.dst`,\
+  `messages.src`, `messages.dst`, `transactions.account_addr`, `accounts.id`
+* `accounts(filter:{id:{eq:""}})`, `accounts(filter:{id:{in:[""]}})`, `blockchain.account(address:"")`\
+  returns account of type `NonExist` if an account is missing in current shard state.
+* Support new config parameter 44 (black list)
+
+## May 9, 2023
+
+### New
+
+* Added ability to post external messages to JRPC endpoint
+
+## April 3, 2023
+
+### New
+
+* Queries slow detector is improved.
+
+## March 20, 2023
+
+### New
+
+* Support new caps in capabilities\_flags.
+
+### Fixed
+
+* `PageInfo.startCursor` and `PageInfo.endCursor` were required.
+
 ## February 16, 2023
 
 ### New
 
 * Remove "UNSTABLE" marks from `blockchain` API
+* Add indexHint to `messages(filter: {src: *, dst: *, created_at: *, * } orderBy: {path: "created_at"})` queries
 
 ## January 18, 2023
 

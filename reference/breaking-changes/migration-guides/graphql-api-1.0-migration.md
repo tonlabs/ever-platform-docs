@@ -20,7 +20,7 @@ As TVM blockchains adoption grows, and with it blockchain load, so does the load
 
 ### Major changes
 
-* The Collections API for blocks, transactions and messages in the new version will only provide data from the last 7 days. To retrieve older (archive) data, you need to use the `blockchain{...}` API with `archive: true` mode on.
+* The Collections API for blocks, transactions and messages in the new version will only provide data from the last 7 days. To retrieve older (archive) data of blocks, transactions end messages, you need to use the `blockchain{...}` API with `archive: true` mode on.
 
 {% hint style="warning" %}
 ☝ The access to archive data will have rps limits, so make sure you don’t implement many requests per second if you specify `archive: true`. **Limit yourself with maximum of 5 requests of archive data per second from one ip address.** If you need higher rate contact @EkaterinaPantaz
@@ -78,7 +78,13 @@ To prepare for the transition from current functionality to the new one, and mak
 
 We have released a flag called '`archive`' for this purpose. Currently, this flag has no functionality (the API works the same way whether `archive=true` or `false`), but it helps in migrating to the new API. When you migrate, the switch from the old API to the new one will be under the hood and invisible to your application.
 
-Be sure to specify the `archive=true` flag only in places where you need to retrieve data older than 7 days. If you do not require old data, do not include the flag.&#x20;
+Be sure to specify the `archive=true` flag only in places where you need to retrieve blocks, transactions end messages data older than 7 days. If you do not require old data, do not include the flag.&#x20;
+
+
+
+{% hint style="info" %}
+Accounts data is still available in full. You do not need the `archive` flag to get data of accounts created more than 7 days ago.
+{% endhint %}
 
 > **Note**: If you could not find a suitable query for your use case in the blockchain API, please message [@EkaterinaPantaz](https://t.me/EkaterinaPantaz) in Telegram, and we will see what we can do to prepare for migration in your individual case.
 >

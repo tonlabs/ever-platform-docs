@@ -1,7 +1,7 @@
 # Transactions
 
 {% hint style="info" %}
-**Note**: With [graphql-api-1.0-migration.md](../../reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md "mention") by default Blockchain API provides only data for the past 7 days. For use cases where earlier data is needed make sure to use the `archive: true` flag in `blockchain` query filters.
+**Note**: With [graphql-api-1.0-migration.md](../../reference/breaking-changes/migration-guides/graphql-api-1.0-migration.md "mention") by default Blockchain API provides blocks, transactions and messages data only for the past 7 days. For use cases where earlier data is needed make sure to use the `archive: true` flag in `blockchain` query filters.
 {% endhint %}
 
 ## Get transaction info by hash
