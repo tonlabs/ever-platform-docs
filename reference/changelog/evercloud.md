@@ -184,7 +184,7 @@ Improved
 
 Removed
 
-See the [migration guide](https://docs.everos.dev/evernode-platform/reference/breaking-changes/migration-guides#migrate\_stats-1)
+See the [migration guide](../breaking-changes/migration-guides/#migrate\_stats-1)
 
 Queries:
 

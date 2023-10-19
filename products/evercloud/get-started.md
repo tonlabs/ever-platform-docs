@@ -371,8 +371,8 @@ message
 
 #### Reference
 
-{% embed url="https://docs.everos.dev/ever-platform/reference/graphql-api" %}
+{% embed url="https://docs.everplatform.dev/reference/graphql-api" %}
 
 #### Samples
 
-{% embed url="https://docs.everos.dev/ever-platform/samples/graphql-samples" %}
+{% embed url="https://docs.everplatform.dev/samples/graphql-samples" %}

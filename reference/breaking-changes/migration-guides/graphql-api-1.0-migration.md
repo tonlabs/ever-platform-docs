@@ -13,7 +13,7 @@ There will be several announcements prior to the actual API transition, which is
 
 The transition will first happen on Venom testnet network, later followed by other supported networks.
 
-To stay updated on the transition, you can monitor [this](https://docs.evercloud.dev/reference/breaking-changes/deprecation-schedule) page or join [this](https://t.me/ever\_sdk\_channel) channel for announcements.
+To stay updated on the transition, you can monitor [this](../deprecation-schedule.md) page or join [this](https://t.me/ever\_sdk\_channel) channel for announcements.
 {% endhint %}
 
 As TVM blockchains adoption grows, and with it blockchain load, so does the load on GraphQL API. To be able to cope with large amounts of data, GraphQL API is being refactored.
@@ -70,7 +70,7 @@ blockchain{
 }
 ```
 
-Detailed documentation of Blockchain API is available [here](https://docs.evercloud.dev/reference/graphql-api/blockchain).
+Detailed documentation of Blockchain API is available [here](../../graphql-api/blockchain.md).
 
 ## Migration guide
 
